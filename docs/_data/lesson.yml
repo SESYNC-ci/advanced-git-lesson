@@ -1,0 +1,14 @@
+title: Advanced git Techniques
+handouts:
+  - worksheet.sh
+tag: v0.1
+lesson: 
+instructor: Quentin Read
+example:
+  name: J. Doe
+  user: jdoe
+  email: jdoe@sesync.org
+authors:
+  - Quentin Read
+sorter:
+  - placeholder

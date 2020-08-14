@@ -66,3 +66,8 @@ The distinction between local vs remote (origin) and primary branch versus other
 ## Pull request
 
 A pull request is just what it says it is: a *request* that the owner of a repo *pull* your changes, incorporating them into his or her repo. You create pull requests on github.com.
+
+When you create a pull request, you specify what version of the repo, with its associated commit history, you want the repo's owner to consider pulling and incorporating. You can add notes and comments.
+
+The repo owner sees the pull request and can review the differences between its code and the code in their current version of the repo. GitHub will tell them if there are any conflicts between the pull request and the base branch. They may decide to immediately accept the pull request and incorporate your changes, or they may want to put some other commits on top of it. In that case, they will create a new branch out of your pull request, add some commits, and only then merge it with the base branch.
+

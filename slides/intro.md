@@ -27,3 +27,15 @@ Before you continue, it's important to note that a lot of these procedures are m
 
 With all of that said, though, even if you rarely or never use some of these techniques, it is helpful just to be exposed to them and know the lingo. You may run across these terms being used and it is good to have some idea of what's going on.
 {:.notes}
+
+===
+
+## Glossary
+
+- *fork*
+
+- *clone*
+
+- *branch*
+
+- *pull request*

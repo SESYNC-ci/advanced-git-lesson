@@ -3,11 +3,13 @@
 
 ## Pull Requests
 
-A **pull request** (PR for short) is just what it says it is: a *request* that the owner of a repo *pull* your changes, incorporating them into his or her repo. 
+A **pull request** (PR for short) is just what it says it is: a *request* that the owner of a repo 
+*pull* your changes, incorporating them into his or her repo. 
 
 ===
 
-For this exercise, there are two roles, the **Owner** and **Collaborator**. Find a partner, and go through this exercise twice, each time taking a different role. 
+For this exercise, there are two roles, the **Owner** and **Collaborator**. Find a partner, 
+and go through this exercise twice, each time taking a different role. 
 
 The **Collaborator** will make the PR and the **Owner** will modify, then accept it.
 
@@ -19,17 +21,20 @@ The **Collaborator** will make the PR and the **Owner** will modify, then accept
 
 ===
 
-**Collaborator**: Specify that you want to compare the xxx branch of your forked repository with the master branch of the current repository.
+**Collaborator**: Specify that you want to compare the xxx branch of your forked repository 
+with the master branch of the current repository.
 
 ===
 
 That's it, you've just made a pull request!
 
-You have made a request for the **Owner** of the repo to review the commits you've made to the code, in the hope that he or she will accept the request and add your changes to the primary official version of the repo.
+You have made a request for the **Owner** of the repo to review the commits you've made to the code, 
+in the hope that he or she will accept the request and add your changes to the primary official version of the repo.
 
 ===
 
-**Owner**: As the owner, you will receive an email saying that someone has made a pull request on your repo. Your options are:
+**Owner**: As the owner, you will receive an email saying that someone has made a pull request on your repo. 
+Your options are:
 
 - Accept the pull request as is
 - Make additional changes to the pull request and then accept
@@ -55,7 +60,8 @@ Accept the pull request!
 
 ===
 
-Now the commits made by your collaborator, and the modifications you made on top of them, are both part of the primary branch of the repo. 
+Now the commits made by your collaborator, and the modifications you made on top of them, are both part of 
+the primary branch of the repo. 
 
 Pull these changes to your local repo.
 

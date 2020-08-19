@@ -13,6 +13,7 @@ authors:
 sorter:
   - intro
   - issue
+  - branch
   - fork
   - pullrequest
-  - branch
+

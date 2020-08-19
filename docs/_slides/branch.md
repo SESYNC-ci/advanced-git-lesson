@@ -162,3 +162,44 @@ The branch still exists on the remote repo on GitHub. You can delete it on the w
 git push --delete my_new_branch
 ~~~
 {:.text-document title="worksheet.sh"}
+
+===
+
+### Point-and-click branching in RStudio
+
+If it's more your style you can use RStudio's GUI for basic branching actions.
+
+Create the branch by clicking "New Branch" on the Git tab in the upper right-hand corner.
+
+![]({% include asset.html path="images/rstudio_git_tab_newbranch.PNG" alt="new branch in git tab" %})
+{:.captioned}
+
+===
+
+In the dialog box that appears, enter the new branch name and select the option to 
+sync with origin. 
+
+![]({% include asset.html path="images/rstudio_newbranch_dialogbox.PNG" alt="new branch dialog box" %})
+{:.captioned}
+
+===
+
+This will simultaneously create the branch, switch to the branch, and sync the branch with the remote!
+
+![]({% include asset.html path="images/rstudio_newbranch_created.PNG" alt="new branch creation message" %})
+{:.captioned}
+
+===
+
+You can switch among branches with the dropdown menu in the Git tab.
+
+![]({% include asset.html path="images/rstudio_branch_dropdown.PNG" alt="branches dropdown menu" %})
+{:.captioned}
+
+===
+
+Unfortunately it's not possible to merge branches with the point-and-click interface so you are stuck with 
+the command line when it's time to `git merge my_new_branch`!
+
+This illustrates that the GUI is really only suitable for simple git actions.
+

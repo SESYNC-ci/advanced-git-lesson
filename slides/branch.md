@@ -171,26 +171,35 @@ If it's more your style you can use RStudio's GUI for basic branching actions.
 
 Create the branch by clicking "New Branch" on the Git tab in the upper right-hand corner.
 
-... insert picture of new branch button ...
+![]({% include asset.html path="images/rstudio_git_tab_newbranch.PNG" alt="new branch in git tab" %})
+{:.captioned}
 
 ===
 
 In the dialog box that appears, enter the new branch name and select the option to 
 sync with origin. 
 
-... insert picture of dialog box ...
+![]({% include asset.html path="images/rstudio_newbranch_dialogbox.PNG" alt="new branch dialog box" %})
+{:.captioned}
 
 ===
 
 This will simultaneously create the branch, switch to the branch, and sync the branch with the remote!
 
-... insert screenshot of the git message that appears when you create branch ...
+![]({% include asset.html path="images/rstudio_newbranch_created.PNG" alt="new branch creation message" %})
+{:.captioned}
 
 ===
 
 You can switch among branches with the dropdown menu in the Git tab.
 
-... insert picture of dropdown ...
+![]({% include asset.html path="images/rstudio_branch_dropdown.PNG" alt="branches dropdown menu" %})
+{:.captioned}
 
 ===
+
+Unfortunately it's not possible to merge branches with the point-and-click interface so you are stuck with 
+the command line when it's time to `git merge my_new_branch`!
+
+This illustrates that the GUI is really only suitable for simple git actions.
 

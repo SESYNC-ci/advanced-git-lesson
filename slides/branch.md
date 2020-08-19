@@ -162,3 +162,35 @@ The branch still exists on the remote repo on GitHub. You can delete it on the w
 git push --delete my_new_branch
 ~~~
 {:.text-document title="worksheet.sh"}
+
+===
+
+### Point-and-click branching in RStudio
+
+If it's more your style you can use RStudio's GUI for basic branching actions.
+
+Create the branch by clicking "New Branch" on the Git tab in the upper right-hand corner.
+
+... insert picture of new branch button ...
+
+===
+
+In the dialog box that appears, enter the new branch name and select the option to 
+sync with origin. 
+
+... insert picture of dialog box ...
+
+===
+
+This will simultaneously create the branch, switch to the branch, and sync the branch with the remote!
+
+... insert screenshot of the git message that appears when you create branch ...
+
+===
+
+You can switch among branches with the dropdown menu in the Git tab.
+
+... insert picture of dropdown ...
+
+===
+

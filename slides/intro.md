@@ -1,6 +1,11 @@
 ---
 ---
 
+**This lesson is in [pre-alpha](https://en.wikipedia.org/wiki/Software_release_life_cycle#Pre-alpha) status!**
+It is incomplete and still in development. Please check back later. Thank you for your patience.
+
+===
+
 ## Lesson Objectives
 
 - Build on the techniques learned in the basic git lesson with more advanced topics

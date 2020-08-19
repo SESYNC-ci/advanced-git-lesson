@@ -3,7 +3,8 @@
 
 ## Forks
 
-![Forky](assets/images/forky.jpg)
+![forky]({% include asset.html path="images/forky.jpeg" %}){:width="30%" style="border: none; box-shadow: none;"}  
+{:.captioned}
 
 A *fork* is not a separate operation from a clone. It is just a clone with a different remote origin. 
 In plain language, this means the expectation is that you are starting your own project, distinct from
@@ -26,7 +27,8 @@ want them to incorporate your changes into their version of the repo, you would 
 
 To fork a repo on GitHub, just go to the repo page and click "Fork" in the upper right-hand corner.
 
-In this example we will fork the "fun" R package, originally developed by Yihui Xie.
+In this example we will fork the [fun](){:.rlib} R package, originally developed by Yihui Xie. 
+Go to <https://github.com/yihui/fun> and fork the repo into your account.
 
 ![fork fun repo]({% include asset.html path="images/github_fork_fun.PNG" %})
 {:.captioned}

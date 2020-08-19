@@ -171,7 +171,7 @@ If it's more your style you can use RStudio's GUI for basic branching actions.
 
 Create the branch by clicking "New Branch" on the Git tab in the upper right-hand corner.
 
-![]({% include asset.html path="images/rstudio_git_tab_newbranch.PNG" alt="new branch in git tab" %})
+![new branch in git tab]({% include asset.html path="images/rstudio_git_tab_newbranch.PNG"  %})
 {:.captioned}
 
 ===
@@ -179,21 +179,21 @@ Create the branch by clicking "New Branch" on the Git tab in the upper right-han
 In the dialog box that appears, enter the new branch name and select the option to 
 sync with origin. 
 
-![]({% include asset.html path="images/rstudio_newbranch_dialogbox.PNG" alt="new branch dialog box" %})
+![new branch dialog box]({% include asset.html path="images/rstudio_newbranch_dialogbox.PNG" %})
 {:.captioned}
 
 ===
 
 This will simultaneously create the branch, switch to the branch, and sync the branch with the remote!
 
-![]({% include asset.html path="images/rstudio_newbranch_created.PNG" alt="new branch creation message" %})
+![new branch creation message]({% include asset.html path="images/rstudio_newbranch_created.PNG" %})
 {:.captioned}
 
 ===
 
 You can switch among branches with the dropdown menu in the Git tab.
 
-![]({% include asset.html path="images/rstudio_branch_dropdown.PNG" alt="branches dropdown menu" %})
+![branches dropdown menu]({% include asset.html path="images/rstudio_branch_dropdown.PNG" %})
 {:.captioned}
 
 ===

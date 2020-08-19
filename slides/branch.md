@@ -116,9 +116,29 @@ Future pushes can be done using only `git push`.
 
 ===
 
-Now you can view the branch on GitHub.
+You can view all branches, both local and remote, with the `-a` option of `git branch`.
 
-... insert screenshot here ...
+~~~bash
+git branch -a
+~~~
+{:.text-document title="worksheet.sh"}
+
+~~~bash
+  master
+* my_new_branch
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+  remotes/origin/my_new_branch
+~~~
+
+===
+
+You can also view the branches on GitHub. Switch between them with the dropdown menu or 
+view, create pull requests, or delete individual branches by clicking on `<n> branches`.
+
+![github branches dropdown]({% include asset.html path="images/github_branch_dropdown.PNG" %})
+{:.captioned}
+
 
 ===
 

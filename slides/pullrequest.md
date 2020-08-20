@@ -42,7 +42,7 @@ Your options are:
 
 ===
 
-In this example, let's say you wanted to accept the pull request, but you need to make some additional
+**Owner**: In this example, let's say you wanted to accept the pull request, but you need to make some additional
 changes to the code before merging it with your primary branch.
 
 To add commits on top of a pull request, you need to pull the branch created by the PR to your local repo.
@@ -51,19 +51,19 @@ Do this by xxx.
 
 ===
 
-Add something to the code, maybe just a comment or two. 
+**Owner**: Add something to the code, maybe just a comment or two. 
 
 Stage, commit, and push --- but make sure you are pushing to the PR branch!
 
 ===
 
-Go back to GitHub.com and view the PR page. You should see your additional commits there.
+**Owner**: Go back to GitHub.com and view the PR page. You should see your additional commits there.
 
 Accept the pull request!
 
 ===
 
-Now the commits made by your collaborator, and the modifications you made on top of them, are both part of 
+**Owner**: Now the commits made by your collaborator, and the modifications you made on top of them, are both part of 
 the primary branch of the repo. 
 
 Pull these changes to your local repo.

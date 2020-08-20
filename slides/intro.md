@@ -16,8 +16,8 @@ It is incomplete and still in development. Please check back later. Thank you fo
 
 ## Specific Achievements
 
+- Create a branch and merge it back into the primary branch
 - Fork a repository
-- Create a side branch and merge it back into the primary branch
 - Make pull requests and accept others' pull requests
 - Use GitHub Issues to track your work
 - Create and edit GitHub Pages for your user account and for one of your projects

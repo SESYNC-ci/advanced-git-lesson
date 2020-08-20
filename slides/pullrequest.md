@@ -8,7 +8,7 @@ A **pull request** (PR for short) is just what it says it is: a *request* that t
 
 ===
 
-For this exercise, there are two roles, the **Owner** and **Collaborator**. Find a partner, 
+For this part of the lesson, there are two roles, the **Owner** and **Collaborator**. Find a partner, 
 and go through this exercise twice, each time taking a different role. 
 
 The **Collaborator** will make the PR and the **Owner** will modify, then accept it.
@@ -42,6 +42,9 @@ Your options are:
 
 ===
 
+In this example, let's say you wanted to accept the pull request, but you need to make some additional
+changes to the code before merging it with your primary branch.
+
 To add commits on top of a pull request, you need to pull the branch created by the PR to your local repo.
 
 Do this by xxx.
@@ -67,4 +70,12 @@ Pull these changes to your local repo.
 
 ===
 
-**Collaborator**
+**Collaborator**: Now that the owner has merged your PR with the primary branch on his or her repo,
+you can pull and check out that primary branch. You can continue to periodically pull the owner's
+new commits to your local repo.
+
+===
+
+Halftime! Switch sides!
+
+Trade places with your partner and repeat the exercise.

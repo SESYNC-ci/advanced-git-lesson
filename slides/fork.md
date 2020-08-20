@@ -48,5 +48,5 @@ git clone https://github.com/{{ site.data.lesson.example.user }}/fun.git
 
 Now, when you commit and push changes to this repo, they will be pushed to the copy you
 own rather than the owner's original copy. So if you are directly working with
-a collaborator on the same project, you would just want to clone the repo and 
-keep the same remote origin as the collaborator, not fork.
+a collaborator on the same project, you would just want to clone (not fork) the repo and 
+keep the same remote origin as the collaborator.

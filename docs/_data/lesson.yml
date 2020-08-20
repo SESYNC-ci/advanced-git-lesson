@@ -12,8 +12,9 @@ authors:
   - Quentin Read
 sorter:
   - intro
-  - issue
   - branch
   - fork
   - pullrequest
+  - issue
+  - pages
 

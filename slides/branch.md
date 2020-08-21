@@ -116,8 +116,11 @@ git push -u origin my_new_branch
 ~~~
 {:.text-document title="worksheet.sh"}
 
-~~~bash
+You will see this at the bottom of the output:
 
+~~~bash
+ * [new branch]      my_new_branch -> my_new_branch
+Branch my_new_branch set up to track remote branch my_new_branch from origin.
 ~~~
 
 Future pushes can be done using only `git push`.
@@ -170,7 +173,14 @@ git merge my_new_branch
 ~~~
 {:.text-document title="worksheet.sh"}
 
-If there were any conflicts, you'd have to resolve them now.
+~~~bash
+Fast-forward
+ slides/branch.md | 4 ++++
+ 1 file changed, 4 insertions(+)
+~~~
+
+This will do a "fast-forward," meaning that we skip the merging step because there are no conflicts between the two branches.
+If there were any conflicts, you'd have to resolve them first.
 
 ===
 
@@ -182,14 +192,22 @@ git branch -d my_new_branch
 ~~~
 {:.text-document title="worksheet.sh"}
 
+~~~bash
+Deleted branch my_new_branch (was f06a00c)
+~~~
+
 ===
 
 The branch still exists on the remote repo on GitHub. You can delete it on the website or from the terminal:
 
 ~~~bash
-git push --delete my_new_branch
+git push origin --delete my_new_branch
 ~~~
 {:.text-document title="worksheet.sh"}
+
+~~~bash
+ - [deleted]         my_new_branch
+~~~
 
 ===
 

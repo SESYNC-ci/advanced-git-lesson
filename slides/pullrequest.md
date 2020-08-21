@@ -23,7 +23,8 @@ give the Collaborator push access.
 
 Initialize the created repo with a README.md to give the Collaborator something to work with.
 
-... insert image of dialog box if necessary ...
+![initialize repo dialog box]({% include asset.html path="images/create_new_repo_for_pr.PNG" %}){:width="60%"}
+{:.captioned}
 
 ===
 
@@ -38,14 +39,16 @@ yet incorporated into the Owner's repo. Time to make a pull request.
 
 **Collaborator**: Go to the "Pull Requests" tab in the Owner's repository. You should see something like this.
 
-... insert image of PR here ...
+![pull request page]({% include asset.html path="images/pullrequest_forkedrepo.png" %})
+{:.captioned}
 
 ===
 
 **Collaborator**: Specify that you want to compare the `master` branch of your forked repository 
-with the `master` branch of the current repository.
+with the `master` branch of the current repository, then click "Create pull request."
 
-... insert image here ...
+![pull request compare step]({% include asset.html path="images/pullrequest_compare.png" %})
+{:.captioned}
 
 ===
 
@@ -87,7 +90,7 @@ Switched to a new branch 'pr_branch'
 of the repo into the newly created branch.
 
 ~~~bash
-git pull https://github.com/(collaborator's name)/(repo name).git master
+git pull https://github.com/(collaborator name)/(repo name).git master
 ~~~
 
 ===
@@ -126,7 +129,8 @@ git push
 closed once you merged the changes into your primary branch. It will be listed under the closed 
 pull requests.
 
-... insert image of closed PRs here ...
+![pull request page]({% include asset.html path="images/closed_prs.PNG" %}){:width="60%"}
+{:.captioned}
 
 The commits made by your collaborator, and the modifications you made on top of them, are both part of 
 the primary branch of the repo. 

@@ -37,12 +37,16 @@ Go to <https://github.com/yihui/fun> and fork the repo into your account.
 
 A few seconds later, you will have a copy of the repo in your account.
 
-Go back to your terminal to clone the forked repo to your local machine.
+Go back to your terminal to clone the forked repo to the home directory on your local machine.
 
 ~~~bash
 git clone https://github.com/{{ site.data.lesson.example.user }}/fun.git
 ~~~
 {:.text-document title="worksheet.sh"}
+
+~~~bash
+Cloning into 'fun'...
+~~~
 
 ===
 

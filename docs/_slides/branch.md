@@ -14,7 +14,7 @@ the changes you made there.
 
 The primary branch, from which side branches are typically made, is called the *master* branch by default, although git and
 GitHub are going to switch this name to something like "main" or "primary" in future versions. We will call it the *primary*
-branch.
+branch in this lesson whenever possible.
 
 *A clarifying note*: The distinction between, on the one hand, local versus remote (origin) and, on the other hand, primary
 (master) branch versus other branches can be confusing at first --- it was to me. You can have multiple branches on both the
@@ -80,6 +80,10 @@ git checkout my_new_branch
 ~~~
 {:.text-document title="worksheet.sh"}
 
+~~~bash
+Switched to branch 'my_new_branch'
+~~~
+
 ===
 
 Alternatively, as a shortcut, you can simultaneously create and switch to a new branch this way:
@@ -111,6 +115,13 @@ local branch.
 git push -u origin my_new_branch
 ~~~
 {:.text-document title="worksheet.sh"}
+
+You will see this at the bottom of the output:
+
+~~~bash
+ * [new branch]      my_new_branch -> my_new_branch
+Branch my_new_branch set up to track remote branch my_new_branch from origin.
+~~~
 
 Future pushes can be done using only `git push`.
 
@@ -162,7 +173,14 @@ git merge my_new_branch
 ~~~
 {:.text-document title="worksheet.sh"}
 
-If there were any conflicts, you'd have to resolve them now.
+~~~bash
+Fast-forward
+ README.md | 4 ++++
+ 1 file changed, 4 insertions(+)
+~~~
+
+This will do a "fast-forward," meaning that we skip the merging step because there are no conflicts between the two branches.
+If there were any conflicts, you'd have to resolve them first.
 
 ===
 
@@ -174,14 +192,22 @@ git branch -d my_new_branch
 ~~~
 {:.text-document title="worksheet.sh"}
 
+~~~bash
+Deleted branch my_new_branch (was f06a00c)
+~~~
+
 ===
 
 The branch still exists on the remote repo on GitHub. You can delete it on the website or from the terminal:
 
 ~~~bash
-git push --delete my_new_branch
+git push origin --delete my_new_branch
 ~~~
 {:.text-document title="worksheet.sh"}
+
+~~~bash
+ - [deleted]         my_new_branch
+~~~
 
 ===
 

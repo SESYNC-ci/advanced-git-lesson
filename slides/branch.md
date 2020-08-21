@@ -175,7 +175,7 @@ git merge my_new_branch
 
 ~~~bash
 Fast-forward
- slides/branch.md | 4 ++++
+ README.md | 4 ++++
  1 file changed, 4 insertions(+)
 ~~~
 

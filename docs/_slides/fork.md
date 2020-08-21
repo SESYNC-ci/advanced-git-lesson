@@ -37,16 +37,20 @@ Go to <https://github.com/yihui/fun> and fork the repo into your account.
 
 A few seconds later, you will have a copy of the repo in your account.
 
-Go back to your terminal to clone the forked repo to your local machine.
+Go back to your terminal to clone the forked repo to the home directory on your local machine.
 
 ~~~bash
 git clone https://github.com/{{ site.data.lesson.example.user }}/fun.git
 ~~~
 {:.text-document title="worksheet.sh"}
 
+~~~bash
+Cloning into 'fun'...
+~~~
+
 ===
 
 Now, when you commit and push changes to this repo, they will be pushed to the copy you
 own rather than the owner's original copy. So if you are directly working with
-a collaborator on the same project, you would just want to clone the repo and 
-keep the same remote origin as the collaborator, not fork.
+a collaborator on the same project, you would just want to clone (not fork) the repo and 
+keep the same remote origin as the collaborator.

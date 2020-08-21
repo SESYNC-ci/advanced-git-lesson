@@ -116,6 +116,10 @@ git push -u origin my_new_branch
 ~~~
 {:.text-document title="worksheet.sh"}
 
+~~~bash
+
+~~~
+
 Future pushes can be done using only `git push`.
 
 ===

@@ -3,7 +3,7 @@
 
 ## Pull Requests
 
-A **pull request** (PR for short) is just what it says it is: a *request* that the owner of a repo 
+A **pull request** (PR for short) is just that: a *request* that the owner of a repo 
 *pull* your changes, incorporating them into his or her repo. 
 
 ===
@@ -15,14 +15,37 @@ The **Collaborator** will make the PR and the **Owner** will modify, then accept
 
 ===
 
-**Collaborator**: Go to the "Pull Requests" tab in the xxx repository. You should see something like this.
+**Owner**: For this exercise, feel free to let the Collaborator fork one of your existing repos.
+If you don't have a repo you own to practice on, quickly create one on GitHub.com.
+
+Make sure it is a public repo so that the Collaborator can clone it. However, you do not need to 
+give the Collaborator push access.
+
+Initialize the created repo with a README.md to give the Collaborator something to work with.
+
+... insert image of dialog box if necessary ...
+
+===
+
+**Collaborator**: Fork the Owner's repo and clone it locally (because now you know how to do that!)
+
+Now make a change to the README.md. Stage, commit, and push (old hat by now!)
+
+The change you've pushed is now part of your forked copy of the repo, but is not
+yet incorporated into the Owner's repo. Time to make a pull request.
+
+===
+
+**Collaborator**: Go to the "Pull Requests" tab in the Owner's repository. You should see something like this.
 
 ... insert image of PR here ...
 
 ===
 
-**Collaborator**: Specify that you want to compare the xxx branch of your forked repository 
-with the master branch of the current repository.
+**Collaborator**: Specify that you want to compare the `master` branch of your forked repository 
+with the `master` branch of the current repository.
+
+... insert image here ...
 
 ===
 
@@ -34,6 +57,7 @@ in the hope that he or she will accept the request and add your changes to the p
 ===
 
 **Owner**: As the owner, you will receive an email saying that someone has made a pull request on your repo. 
+
 Your options are:
 
 - Accept the pull request as is
@@ -42,31 +66,72 @@ Your options are:
 
 ===
 
-**Owner**: In this example, let's say you wanted to accept the pull request, but you need to make some additional
-changes to the code before merging it with your primary branch.
+**Owner**: Even though the PR page shows that there are no conflicts, it is good practice to test the 
+code before accepting and merging the PR. To do this, you need to create a new branch locally for 
+the PR, and then pull the Collaborator's changes into that local branch.
 
-To add commits on top of a pull request, you need to pull the branch created by the PR to your local repo.
+We will follow the command line instructions that GitHub helpfully provides.
+First create a new branch and switch to it.
 
-Do this by xxx.
+~~~bash
+git checkout -b pr_branch master
+~~~
 
-===
-
-**Owner**: Add something to the code, maybe just a comment or two. 
-
-Stage, commit, and push --- but make sure you are pushing to the PR branch!
-
-===
-
-**Owner**: Go back to GitHub.com and view the PR page. You should see your additional commits there.
-
-Accept the pull request!
+~~~
+Switched to a new branch 'pr_branch'
+~~~
 
 ===
 
-**Owner**: Now the commits made by your collaborator, and the modifications you made on top of them, are both part of 
+**Owner**: Pull the Collaborator's changes from the primary branch of their forked version
+of the repo into the newly created branch.
+
+~~~bash
+git pull https://github.com/(collaborator's name)/(repo name).git master
+~~~
+
+===
+
+After you have tested the code, you can accept the PR by merging the changes from the command line.
+
+**Owner**: Checkout your master branch again and merge the PR branch into it. The `--no-ff` flag ensures
+that git will create a merge so that it's obvious later on that a pull request was made.
+
+~~~bash
+git checkout master
+~~~
+
+~~~
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+~~~
+
+~~~bash
+git merge --no-ff pr_branch
+~~~
+
+~~~
+Merge made by the 'recursive' strategy.
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+~~~
+
+~~~bash
+git push
+~~~
+
+===
+
+**Owner**: Go back to GitHub.com and view the PR page. You should see that the PR was automatically
+closed once you merged the changes into your primary branch. It will be listed under the closed 
+pull requests.
+
+... insert image of closed PRs here ...
+
+The commits made by your collaborator, and the modifications you made on top of them, are both part of 
 the primary branch of the repo. 
 
-Pull these changes to your local repo.
+You can delete the PR branch locally with `git branch -d pr_branch`.
 
 ===
 

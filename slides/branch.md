@@ -14,7 +14,7 @@ the changes you made there.
 
 The primary branch, from which side branches are typically made, is called the *master* branch by default, although git and
 GitHub are going to switch this name to something like "main" or "primary" in future versions. We will call it the *primary*
-branch.
+branch in this lesson whenever possible.
 
 *A clarifying note*: The distinction between, on the one hand, local versus remote (origin) and, on the other hand, primary
 (master) branch versus other branches can be confusing at first --- it was to me. You can have multiple branches on both the
@@ -79,6 +79,10 @@ Use `git checkout` to "check out", or switch to, the newly created branch.
 git checkout my_new_branch
 ~~~
 {:.text-document title="worksheet.sh"}
+
+~~~bash
+Switched to branch 'my_new_branch'
+~~~
 
 ===
 

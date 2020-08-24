@@ -5,7 +5,7 @@
 
 GitHub provides free* web hosting through GitHub Pages. You can create a site associated with your user account (`{{ site.data.lesson.example.user }}.github.io`) or a page for any of your repos (`mycoolproject.github.io`). 
 
-* = Because GitHub is owned by Microsoft it is not guaranteed that any of the services they provide will be free forever. It is for now.
+\* = Because GitHub is owned by Microsoft it is not guaranteed that any of the services they provide will be free forever. It is for now.
 
 ===
 

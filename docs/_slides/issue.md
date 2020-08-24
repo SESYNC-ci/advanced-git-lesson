@@ -19,7 +19,7 @@ You can reference users, commits, pull requests, and other issues in the text of
 
 To reference users, use the `@` sign followed by their name.
 
-To reference commits, use the first 7 digits of the commit's hash (it will look like `5d1001b`).
+To reference commits, use the first 7 digits of the commit's hash (it will look something like `5d1001b`).
 
 To reference pull requests and other issues, use the `#` sign followed by the number ID of the pull request or issue. They go up sequentially starting at `#1`.
 

@@ -79,8 +79,9 @@ First create a new branch and switch to it.
 ~~~bash
 git checkout -b pr_branch master
 ~~~
+{:.text-document title="worksheet.sh"}
 
-~~~
+~~~bash
 Switched to a new branch 'pr_branch'
 ~~~
 
@@ -92,6 +93,7 @@ of the repo into the newly created branch.
 ~~~bash
 git pull https://github.com/(collaborator name)/(repo name).git master
 ~~~
+{:.text-document title="worksheet.sh"}
 
 ===
 
@@ -103,8 +105,9 @@ that git will create a merge so that it's obvious later on that a pull request w
 ~~~bash
 git checkout master
 ~~~
+{:.text-document title="worksheet.sh"}
 
-~~~
+~~~bash
 Switched to branch 'master'
 Your branch is up to date with 'origin/master'.
 ~~~
@@ -112,8 +115,9 @@ Your branch is up to date with 'origin/master'.
 ~~~bash
 git merge --no-ff pr_branch
 ~~~
+{:.text-document title="worksheet.sh"}
 
-~~~
+~~~bash
 Merge made by the 'recursive' strategy.
  README.md | 2 ++
  1 file changed, 2 insertions(+)
@@ -122,6 +126,7 @@ Merge made by the 'recursive' strategy.
 ~~~bash
 git push
 ~~~
+{:.text-document title="worksheet.sh"}
 
 ===
 
@@ -135,7 +140,18 @@ pull requests.
 The commits made by your collaborator, and the modifications you made on top of them, are both part of 
 the primary branch of the repo. 
 
-You can delete the PR branch locally with `git branch -d pr_branch`.
+===
+
+You can delete the PR branch locally if you like:
+
+~~~bash
+git branch -d pr_branch
+~~~
+{:.text-document title="worksheet.sh"}
+
+~~~bash
+ - [deleted]         pr_branch
+~~~
 
 ===
 

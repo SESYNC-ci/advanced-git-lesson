@@ -5,40 +5,49 @@
 
 A *branch* is a separate "version" of a repo with its own history --- it is not a separate copy, it exists within the repo where it was created.
 
-The expectation here is that you are going to make some changes to temporarily test things out, and then either merge the
+![]({% include asset.html path="images/atlassian_branches.png" %}){:width="50%" style="border: none; box-shadow: none;"}  
+*[Image][using-branches] by Atlassian / [CC BY]*
+{:.captioned}
+
+The expectation is that you are going to make some changes to temporarily test things out, and then either merge the
 commits you made in the side branch back into the main branch, or delete/abandon the branch if you don't want to incorporate
 the changes you made there.
 {:.notes}
 
 ===
 
-The primary branch, from which side branches are typically made, is called the *master* branch by default, although git and
-GitHub are going to switch this name to something like "main" or "primary" in future versions. We will call it the *primary*
+The primary branch, from which side branches are typically made, is called the **master** branch by default, although git and
+GitHub are going to change this name to something like "main" or "primary" in future versions. We will call it the **primary**
 branch in this lesson whenever possible.
 
+![]({% include asset.html path="images/atlassian_merge_before.png" %}){:width="50%" style="border: none; box-shadow: none;"}  
+*[Image][using-branches] by Atlassian / [CC BY]*
+{:.captioned}
+
 *A clarifying note*: The distinction between, on the one hand, local versus remote (origin) and, on the other hand, primary
-(master) branch versus other branches can be confusing at first --- it was to me. You can have multiple branches on both the
-local and remote copies of the repository. They need not be the same. But if you want to push to, or pull from, the remote, the
+(master) branch versus other branches can be confusing at first. You can have multiple branches on both the
+local and remote copies of the repository. The local and remote branches are not necessarily the same. 
+But if you want to push to, or pull from, the remote, the
 default will be the primary branch unless you specify which branch you are pushing, or pulling.
 {:.notes}
 
 ===
 
-You can *probably* set up your collaborative research workflow to avoid using branches, but they can make your life a lot
+Using branches in your collaborative research workflow can make your life a lot
 easier. For example, several collaborators could work on code simultaneously, each in their own branch, pushing commits as they
 work. No merge conflicts would occur in the primary branch during that time, saving the hassle of resolving many little
-conflicts one by one. Then, when everyone is done, they can merge their branches into the primary branch and resolve everything
-at once.
+conflicts one by one. When everyone is done, they merge their branches into the primary branch and resolve everything at once.
 
-Another place where branches are very useful is in software or web development. For example, many R packages (like SESYNC's
-[rslurm](https://cyberhelp.sesync.org/rslurm)) are downloadable directly from the GitHub repository. Let's say the developer is
+![]({% include asset.html path="images/atlassian_merge_after.png" %}){:width="50%" style="border: none; box-shadow: none;"}  
+*[Image][using-branches] by Atlassian / [CC BY]*
+{:.captioned}
+
+Branches are very useful in software development. For example, many R packages are downloadable directly from the GitHub repository. Let's say the developer is
 testing out changes that she wants to push to GitHub so that other collaborators can see them, but she doesn't want those
-changes to be made to the version that people are actually downloading. Maybe she's not sure if they are good changes or that
-they will even work correctly. In that situation, it is ideal to create a branch. If the branch is pushed to the remote, it
-will be accessible to other collaborators but not to people that download the primary branch. Another good use case would be if
-you have a GitHub Pages site and you are making major changes to the layout that might take days. You don't want people
-visiting the site to see the half-finished version --- so if you make the changes in a branch, only you can see them until you
-merge it back into the primary branch.
+changes to be made to the publicly downloadable version yet. In that situation, it is ideal to create a branch. 
+If the branch is pushed to the remote, it
+will be accessible to other collaborators but not to people that download the primary branch. 
+It's also a good idea to use branches to test out changes to websites hosted on GitHub Pages before going live.
 {:.notes}
 
 ===
@@ -57,6 +66,8 @@ You can create a branch from the terminal or point-and-click-style in RStudio. C
 1. Push commits to the remote branch.
 1. Repeat 3 and 4 as needed.
 1. Merge the branch back into the primary branch.
+
+First, let's practice a basic branch workflow using the command line.
 
 ===
 
@@ -145,7 +156,7 @@ git branch -a
 ===
 
 You can also view the branches on GitHub. Switch between them with the dropdown menu or 
-view, create pull requests, or delete individual branches by clicking on `<n> branches`.
+view, create pull requests, or delete individual branches by clicking on "View all branches."
 
 ![github branches dropdown]({% include asset.html path="images/github_branch_dropdown.PNG" %})
 {:.captioned}
@@ -249,3 +260,5 @@ the command line when it's time to `git merge my_new_branch`!
 
 This illustrates that the GUI is really only suitable for simple git actions.
 
+[using-branches]: https://www.atlassian.com/git/tutorials/using-branches/
+[CC BY]: http://creativecommons.org/licenses/by/2.5/au/

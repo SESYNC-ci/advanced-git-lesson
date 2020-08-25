@@ -41,3 +41,10 @@ git push
 git branch -d pr_branch
 
 ## GitHub Pages
+
+### Personal website
+git clone https://github.com/{{ site.data.lesson.example.user }}/{{ site.data.lesson.example.user }}.github.io
+
+### Project page
+git checkout -b gh-pages
+git pull origin gh-pages --allow-unrelated-histories

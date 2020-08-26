@@ -77,17 +77,17 @@ We will follow the command line instructions that GitHub helpfully provides.
 First create a new branch and switch to it.
 
 ~~~bash
-git checkout -b pr_branch master
+git checkout -b pr-branch
 ~~~
 {:.text-document title="worksheet.sh"}
 
 ~~~bash
-Switched to a new branch 'pr_branch'
+Switched to a new branch 'pr-branch'
 ~~~
 
 ===
 
-**Owner**: Pull the Collaborator's changes from the primary branch of their forked version
+**Owner**: Pull the Collaborator's changes from the master branch of their forked version
 of the repo into the newly created branch.
 
 ~~~bash
@@ -113,7 +113,7 @@ Your branch is up to date with 'origin/master'.
 ~~~
 
 ~~~bash
-git merge --no-ff pr_branch
+git merge --no-ff pr-branch
 ~~~
 {:.text-document title="worksheet.sh"}
 
@@ -131,32 +131,32 @@ git push
 ===
 
 **Owner**: Go back to GitHub.com and view the PR page. You should see that the PR was automatically
-closed once you merged the changes into your primary branch. It will be listed under the closed 
+closed once you merged the changes into your master branch. It will be listed under the closed 
 pull requests.
 
 ![pull request page]({% include asset.html path="images/closed_prs.PNG" %}){:width="60%"}
 {:.captioned}
 
 The commits made by your collaborator, and the modifications you made on top of them, are both part of 
-the primary branch of the repo. 
+the master branch of the repo. 
 
 ===
 
 You can delete the PR branch locally if you like:
 
 ~~~bash
-git branch -d pr_branch
+git branch -d pr-branch
 ~~~
 {:.text-document title="worksheet.sh"}
 
 ~~~bash
- - [deleted]         pr_branch
+ - [deleted]         pr-branch
 ~~~
 
 ===
 
-**Collaborator**: Now that the owner has merged your PR with the primary branch on his or her repo,
-you can pull and check out that primary branch. You can continue to periodically pull the owner's
+**Collaborator**: Now that the owner has merged your PR with the master branch on his or her repo,
+you can pull and check out that master branch. You can continue to periodically pull the owner's
 new commits to your local repo.
 
 ===

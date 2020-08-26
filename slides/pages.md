@@ -114,7 +114,7 @@ Merge made by the 'recursive' strategy.
  create mode 100644 index.md
 ~~~
 
-You need to use the `--allow-unrelated-histories` option or you will get an error. The `gh-pages` branch was created with a fresh history that does not include the old commit history from the primary branch.
+You need to use the `--allow-unrelated-histories` option or you will get an error. The `gh-pages` branch was created with a fresh history that does not include the old commit history from the master branch.
 {:.notes}
 
 ===

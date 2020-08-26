@@ -1,26 +1,26 @@
 ## Branches
 
-git branch my_new_branch
+git branch my-new-branch
 
-git checkout my_new_branch
+git checkout my-new-branch
 
 # An alternative to the above two lines is:
-# git checkout -b my_new_branch
+# git checkout -b my-new-branch
 
 git add /path/to/changed/file
 git commit -m "Commit message"
 
-git push -u origin my_new_branch
+git push -u origin my-new-branch
 
 git branch -a
 
 git checkout master
 
-git merge my_new_branch
+git merge my-new-branch
 
-git branch -d my_new_branch
+git branch -d my-new-branch
 
-git push origin --delete my_new_branch
+git push origin --delete my-new-branch
 
 ## Forks
 

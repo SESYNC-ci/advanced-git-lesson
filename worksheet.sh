@@ -5,7 +5,7 @@ git branch ...
 git ...
 
 # An alternative to the above two lines is:
-# git checkout -b my_new_branch
+# git checkout -b my-new-branch
 
 # Staging, committing, and pushing changes to branch
 git add ...
@@ -16,10 +16,10 @@ git branch ...
 
 # Merging branch and cleanup
 git ...
-git ... my_new_branch
+git ... my-new-branch
 
-git ... my_new_branch
-git push ... my_new_branch
+git ... my-new-branch
+git push ... my-new-branch
 
 ## Forks
 

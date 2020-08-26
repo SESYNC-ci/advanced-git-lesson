@@ -35,21 +35,33 @@ default will be the master branch unless you specify which branch you are pushin
 
 ### Use cases for branches
 
-- **Making your collaborative workflow smoother**: If several collaborators are working on code simultaneously, 
+- **Making your collaborative workflow smoother** 
+
+If several collaborators are working on code simultaneously, 
 each one can create their own branch, pushing commits as they work. 
 No merge conflicts would occur in the master branch during that time, saving the hassle of resolving many little
 conflicts one by one. When everyone is done, they merge their branches into the master branch and resolve everything at once.
+{:.notes}
 
-![]({% include asset.html path="images/atlassian_merge_after.png" %}){:width="50%" style="border: none; box-shadow: none;"}  
-*[Image][using-branches] by Atlassian / [CC BY]*
-{:.captioned}
+- **Making pull requests**
 
-- **Testing changes in software and web development**: For example, many R packages are downloadable directly from the GitHub repository. Let's say the developer is testing out changes that she wants to push to GitHub so that other collaborators can see them. In that situation, it is ideal to create a branch. If the branch is pushed to the remote, it
+Suggesting a change to someone else's repo, whether it's your collaborator's repo or someone else's, 
+requires you to create a branch and make a *pull request* from that branch. 
+We will cover pull requests in depth later on in this lesson.
+{:.notes}
+
+- **Testing code in software and web development**
+
+For example, many R packages are downloadable directly from the GitHub repository. 
+Let's say the developer is testing out changes that she wants to push to GitHub so that other collaborators can see them. 
+In that situation, it is ideal to create a branch. If the branch is pushed to the remote, it
 will be accessible to other collaborators but not to people that download the master branch. 
 It's also a good idea to use branches to test out changes to websites hosted on GitHub Pages before going live.
 {:.notes}
 
-**FIXME another use case is to make pull requests. See later in lesson**
+![]({% include asset.html path="images/atlassian_merge_after.png" %}){:width="50%" style="border: none; box-shadow: none;"}  
+*[Image][using-branches] by Atlassian / [CC BY]*
+{:.captioned}
 
 ===
 

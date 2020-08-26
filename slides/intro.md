@@ -16,11 +16,20 @@ It is incomplete and still in development. Please check back later. Thank you fo
 
 ## Specific Achievements
 
-- Create a branch and merge it back into the primary branch
-- Fork a repository
-- Make pull requests and accept others' pull requests
-- Use GitHub Issues to track your work
+- Create, modify, and merge branches for an improved workflow
+- Fork a repository to add your own contributions to someone else's project
+- Make and accept pull requests for smooth collaboration
+- Use GitHub Issues to document and manage your work
 - Create and edit GitHub Pages for your user account and for one of your projects
+
+===
+
+## Prerequisites
+
+You should be able to do the basic git actions described in the 
+[Basic git Lesson](https://cyberhelp.sesync.org/basic-git-lesson) 
+or the [Git in the Shell lesson](https://cyberhelp.sesync.org/git-in-the-shell-lesson) :
+set up a repo, stage changes, commit, push, and pull.
 
 ===
 

@@ -71,9 +71,9 @@ Select a premade Jekyll theme for your page.
 
 This will automatically create a branch called `gh-pages` and open a code editor window for the `index.md` file. This is a Markdown file that Jekyll will render into HTML to become the homepage for your project.
 
-Also, after a few minutes, your site will be live at ``{{ site.data.lesson.example.user }}.github.io/projectname`!
+Also, after a few minutes, your site will be live at `{{ site.data.lesson.example.user }}.github.io/projectname`!
 
-![github pages editor window]({% include asset.html path="images/gh_pages_theme_set.PNG" %})
+![github pages editor window]({% include asset.html path="images/gh_pages_themeset.PNG" %})
 {:.captioned}
 
 ===

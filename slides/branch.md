@@ -33,19 +33,18 @@ default will be the primary branch unless you specify which branch you are pushi
 
 ===
 
-Using branches in your collaborative research workflow can make your life a lot
-easier. For example, several collaborators could work on code simultaneously, each in their own branch, pushing commits as they
-work. No merge conflicts would occur in the primary branch during that time, saving the hassle of resolving many little
+### Use cases for branches
+
+- **Making your collaborative workflow smoother**: If several collaborators are working on code simultaneously, 
+each one can create their own branch, pushing commits as they work. 
+No merge conflicts would occur in the primary branch during that time, saving the hassle of resolving many little
 conflicts one by one. When everyone is done, they merge their branches into the primary branch and resolve everything at once.
 
 ![]({% include asset.html path="images/atlassian_merge_after.png" %}){:width="50%" style="border: none; box-shadow: none;"}  
 *[Image][using-branches] by Atlassian / [CC BY]*
 {:.captioned}
 
-Branches are very useful in software development. For example, many R packages are downloadable directly from the GitHub repository. Let's say the developer is
-testing out changes that she wants to push to GitHub so that other collaborators can see them, but she doesn't want those
-changes to be made to the publicly downloadable version yet. In that situation, it is ideal to create a branch. 
-If the branch is pushed to the remote, it
+- **Testing changes in software and web development**: For example, many R packages are downloadable directly from the GitHub repository. Let's say the developer is testing out changes that she wants to push to GitHub so that other collaborators can see them. In that situation, it is ideal to create a branch. If the branch is pushed to the remote, it
 will be accessible to other collaborators but not to people that download the primary branch. 
 It's also a good idea to use branches to test out changes to websites hosted on GitHub Pages before going live.
 {:.notes}
@@ -76,7 +75,7 @@ First, let's practice a basic branch workflow using the command line.
 Create a new branch in your local repo with the `git branch` command.
 
 ~~~bash
-git branch my_new_branch
+git branch my-new-branch
 ~~~
 {:.text-document title="worksheet.sh"}
 
@@ -87,12 +86,12 @@ git branch my_new_branch
 Use `git checkout` to "check out", or switch to, the newly created branch.
 
 ~~~bash
-git checkout my_new_branch
+git checkout my-new-branch
 ~~~
 {:.text-document title="worksheet.sh"}
 
 ~~~bash
-Switched to branch 'my_new_branch'
+Switched to branch 'my-new-branch'
 ~~~
 
 ===
@@ -100,7 +99,7 @@ Switched to branch 'my_new_branch'
 Alternatively, as a shortcut, you can simultaneously create and switch to a new branch this way:
 
 ~~~bash
-git checkout -b my_new_branch
+git checkout -b my-new-branch
 ~~~
 
 ===
@@ -123,15 +122,15 @@ which is short for `--set-upstream`. It makes sense to give the remote branch th
 local branch.
 
 ~~~bash
-git push -u origin my_new_branch
+git push -u origin my-new-branch
 ~~~
 {:.text-document title="worksheet.sh"}
 
 You will see this at the bottom of the output:
 
 ~~~bash
- * [new branch]      my_new_branch -> my_new_branch
-Branch my_new_branch set up to track remote branch my_new_branch from origin.
+ * [new branch]      my-new-branch -> my-new-branch
+Branch my-new-branch set up to track remote branch my-new-branch from origin.
 ~~~
 
 Future pushes can be done using only `git push`.
@@ -147,10 +146,10 @@ git branch -a
 
 ~~~bash
   master
-* my_new_branch
+* my-new-branch
   remotes/origin/HEAD -> origin/master
   remotes/origin/master
-  remotes/origin/my_new_branch
+  remotes/origin/my-new-branch
 ~~~
 
 ===
@@ -180,7 +179,7 @@ git checkout master
 Next, merge your branch into the primary branch with `git merge`:
 
 ~~~bash
-git merge my_new_branch
+git merge my-new-branch
 ~~~
 {:.text-document title="worksheet.sh"}
 
@@ -199,12 +198,12 @@ Now you can continue your work in the primary branch. To avoid cluttering up the
 it's a good idea to delete old unused branches. Use the `-d` option on `git branch`:
 
 ~~~bash
-git branch -d my_new_branch
+git branch -d my-new-branch
 ~~~
 {:.text-document title="worksheet.sh"}
 
 ~~~bash
-Deleted branch my_new_branch (was f06a00c)
+Deleted branch my-new-branch (was f06a00c)
 ~~~
 
 ===
@@ -212,12 +211,12 @@ Deleted branch my_new_branch (was f06a00c)
 The branch still exists on the remote repo on GitHub. You can delete it on the website or from the terminal:
 
 ~~~bash
-git push origin --delete my_new_branch
+git push origin --delete my-new-branch
 ~~~
 {:.text-document title="worksheet.sh"}
 
 ~~~bash
- - [deleted]         my_new_branch
+ - [deleted]         my-new-branch
 ~~~
 
 ===
@@ -256,7 +255,7 @@ You can switch among branches with the dropdown menu in the Git tab.
 ===
 
 Unfortunately it's not possible to merge branches with the point-and-click interface so you are stuck with 
-the command line when it's time to `git merge my_new_branch`!
+the command line when it's time to `git merge my-new-branch`!
 
 This illustrates that the GUI is really only suitable for simple git actions.
 

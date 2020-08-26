@@ -6,6 +6,8 @@
 A **pull request** (PR for short) is just that: a *request* that the owner of a repo 
 *pull* your changes, incorporating them into his or her repo. 
 
+**FIXME add some details about why you'd do pull requests.** You can PR anyone's repo even if you do not have push access, but if you do have push access you might still want to do a pull request because it's more respectful. It gives the main person a chance to approve your changes.
+
 ===
 
 For this part of the lesson, there are two roles, the **Owner** and **Collaborator**. Find a partner, 

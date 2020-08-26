@@ -15,6 +15,10 @@ GitHub provides free* web hosting through GitHub Pages. You can create a site as
 
 **FIXME explain Jekyll here**
 
+**FIXME explain that our sites are all hosted this way, as are a lot of other things like sf that you might see. Provide lynx.**
+
+**FIXME you can also manually render html from a markdown document and put it on your page.**
+
 ===
 
 ### Creating a personal site
@@ -71,9 +75,9 @@ Select a premade Jekyll theme for your page.
 
 This will automatically create a branch called `gh-pages` and open a code editor window for the `index.md` file. This is a Markdown file that Jekyll will render into HTML to become the homepage for your project.
 
-Also, after a few minutes, your site will be live at ``{{ site.data.lesson.example.user }}.github.io/projectname`!
+Also, after a few minutes, your site will be live at `{{ site.data.lesson.example.user }}.github.io/projectname`!
 
-![github pages editor window]({% include asset.html path="images/gh_pages_theme_set.PNG" %})
+![github pages editor window]({% include asset.html path="images/gh_pages_themeset.PNG" %})
 {:.captioned}
 
 ===
@@ -114,7 +118,7 @@ Merge made by the 'recursive' strategy.
  create mode 100644 index.md
 ~~~
 
-You need to use the `--allow-unrelated-histories` option or you will get an error. The `gh-pages` branch was created with a fresh history that does not include the old commit history from the primary branch.
+You need to use the `--allow-unrelated-histories` option or you will get an error. The `gh-pages` branch was created with a fresh history that does not include the old commit history from the master branch.
 {:.notes}
 
 ===

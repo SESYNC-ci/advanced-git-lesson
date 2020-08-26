@@ -49,21 +49,16 @@ will be accessible to other collaborators but not to people that download the ma
 It's also a good idea to use branches to test out changes to websites hosted on GitHub Pages before going live.
 {:.notes}
 
-===
-
-### Creating a branch
-
-You can create a branch from the terminal or point-and-click-style in RStudio. Choose your preferred method.
+**FIXME another use case is to make pull requests. See later in lesson**
 
 ===
 
 ### Branch workflow
 
 1. Create a new branch locally
-1. Switch to the new branch locally
-1. Make some changes, stage, and commit.
-1. Push commits to the remote branch.
-1. Repeat 3 and 4 as needed.
+1. Switch to the new branch locally.
+1. Set the local branch to track a remote branch.
+1. Make some changes, stage, commit, and push (repeat as needed).
 1. Merge the branch back into the master branch.
 
 First, let's practice a basic branch workflow using the command line.
@@ -71,6 +66,8 @@ First, let's practice a basic branch workflow using the command line.
 ===
 
 ### Create branch locally
+
+You can create a branch from the terminal or point-and-click-style in RStudio. We'll start by using the terminal.
 
 Create a new branch in your local repo with the `git branch` command.
 Give it a name with only letters, numbers, and hyphens (no spaces, because it will be part of a URL).
@@ -105,17 +102,7 @@ git checkout -b my-new-branch
 
 ===
 
-Make some changes, stage, and commit.
-
-~~~bash
-git add /path/to/changed/file
-git commit -m "Commit message"
-~~~
-{:.text-document title="worksheet.sh"}
-
-===
-
-### Sync the branch to the remote repo
+### Set up the local branch to track a branch on the remote repo
 
 We need to add the newly created branch to the origin (remote repo) so that changes we commit and push
 are pushed to that branch and not the master. Do this using `git push` with the `-u` option,
@@ -138,7 +125,18 @@ Future pushes can be done using only `git push`.
 
 ===
 
+Make some changes, stage, commit, and push.
+
+~~~bash
+git add /path/to/changed/file
+git commit -m "Commit message"
+~~~
+{:.text-document title="worksheet.sh"}
+
+===
+
 You can view all branches, both local and remote, with the `-a` option of `git branch`.
+The asterisk indicates the branch you are in locally.
 
 ~~~bash
 git branch -a
@@ -220,6 +218,11 @@ git push origin --delete my-new-branch
  - [deleted]         my-new-branch
 ~~~
 
+*Note*: You can also merge newer changes from the master branch into a side branch. 
+Just do the opposite of the above `git checkout` and `git merge` steps: 
+first checkout the side branch and then `git merge master`.
+{:.notes}
+
 ===
 
 ### Point-and-click branching in RStudio
@@ -241,7 +244,7 @@ sync with origin.
 
 ===
 
-This will simultaneously create the branch, switch to the branch, and sync the branch with the remote!
+This will simultaneously create the branch, switch to the branch, and set up the local branch to track a remote branch!
 
 ![new branch creation message]({% include asset.html path="images/rstudio_newbranch_created.PNG" %})
 {:.captioned}

@@ -6,14 +6,15 @@
 ![forky]({% include asset.html path="images/forky.jpeg" %}){:width="30%" style="border: none; box-shadow: none;"}  
 {:.captioned}
 
-A *fork* is not a separate operation from a clone. It is just a clone with a different remote origin. 
-In plain language, this means the expectation is that you are starting your own project, distinct from
-the project you forked from.
+To *fork* a repo is to copy a repo from someone else's account into your account so that you can start your own project
+based on the existing repo, without having to push changes to the original owner's repo.
+
+A fork is not a separate operation from a clone. It is just a clone with a different remote origin. 
 
 If you fork a repo, it is probably going to be one where you aren't collaborating directly with its creator. The creator may
 continue to make updates, adding commits to their version's history, while you do the same. A good example would be if you are
-making a GitHub Page, and you want to use a premade template. Many page templates have their own repos that you can fork and
-create your own page from. The content you add to the page will make it its own project, and you would rarely to incorporate the content you added back into the original template.
+making a GitHub Page, and you want to use a premade template. You would fork the page template repo and add your own content;
+you would likely never push changes to the template itself.
 {:.notes}
 
 However, if you are working on a project that you forked from someone else's repo, and you do

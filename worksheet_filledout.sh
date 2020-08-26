@@ -7,10 +7,11 @@ git checkout my-new-branch
 # An alternative to the above two lines is:
 # git checkout -b my-new-branch
 
+git push -u origin my-new-branch
+
 git add /path/to/changed/file
 git commit -m "Commit message"
-
-git push -u origin my-new-branch
+git push
 
 git branch -a
 

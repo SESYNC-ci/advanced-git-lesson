@@ -15,6 +15,10 @@ GitHub provides free* web hosting through GitHub Pages. You can create a site as
 
 **FIXME explain Jekyll here**
 
+**FIXME explain that our sites are all hosted this way, as are a lot of other things like sf that you might see. Provide lynx.**
+
+**FIXME you can also manually render html from a markdown document and put it on your page.**
+
 ===
 
 ### Creating a personal site

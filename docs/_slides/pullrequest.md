@@ -6,7 +6,10 @@
 A **pull request** (PR for short) is just that: a *request* that the owner of a repo 
 *pull* your changes, incorporating them into his or her repo. 
 
-**FIXME add some details about why you'd do pull requests.** You can PR anyone's repo even if you do not have push access, but if you do have push access you might still want to do a pull request because it's more respectful. It gives the main person a chance to approve your changes.
+You can make a pull request to any public repo on GitHub, even if you don't have push access to the repo. 
+In contrast, if you are a collaborator on a repo who has write access, you can push commits without making pull requests. However, it is often a good idea to make a pull request anyway, instead of pushing directly. This is a more respectful way
+to contribute to a project because it gives the repo owner a chance to review your changes and approve them.
+{:.notes}
 
 ===
 

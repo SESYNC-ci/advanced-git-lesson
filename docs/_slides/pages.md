@@ -13,11 +13,26 @@ GitHub provides free* web hosting through GitHub Pages. You can create a site as
 
 ### How does it work?
 
-**FIXME explain Jekyll here**
+When you designate a repo as a page, GitHub will build the Markdown (`.md`) files in the repo into
+HTML files, creating a complete static site, using software called [Jekyll](https://jekyllrb.com/).
 
-**FIXME explain that our sites are all hosted this way, as are a lot of other things like sf that you might see. Provide lynx.**
+Note that you can also create the HTML pages yourself, either by using RStudio to knit your
+Markdown or RMarkdown files to HTML, or manually.
 
-**FIXME you can also manually render html from a markdown document and put it on your page.**
+There are many ways to customize the layout and theme of your page. This lesson does not go into
+much detail about that. The first place to look for more information is 
+[the official GitHub Pages documentation](https://docs.github.com/en/github/working-with-github-pages). 
+We have also compiled [a list of resources, tutorials, and templates](https://github.com/SESYNC-ci/sesync-ci.github.io/blob/master/blog/_drafts/github-pages-resources.md).
+{:.notes}
+
+<!-- Replace the link to draft blog post with a real one when it's made -->
+
+All the [SESYNC cyberhelp lesson pages](https://cyberhelp.sesync.org/lesson/) were created with GitHub Pages, 
+including this one! 
+The [homepage of the popular R package sf](https://r-spatial.github.io/sf/) is also a GitHub Page,
+as are [this collection of R stats tutorials](https://tinystats.github.io/teacups-giraffes-and-statistics/index.html)
+and many academic pages including [this lab website](http://nelson.rbind.io/).
+{:.notes}
 
 ===
 
@@ -57,11 +72,15 @@ The repo you forked contains a demo site with a number of different types of pag
 
 When you push changes to this repo, the site will rebuild within a minute or two. 
 If there are no errors in the build, it will be updated on the server. 
+
 In Exercise 1 below, you will make a change to the homepage and push it.
 
 ===
 
 ### Creating a project page with a premade template
+
+In addition to your personal site at `username.github.io`, you can also make pages associated with your
+individual projects on GitHub.
 
 To make one of your GitHub repos into a page, go to the **Settings** page of your repo and scroll down to the
 **GitHub Pages** section.
@@ -75,7 +94,7 @@ Select a premade Jekyll theme for your page.
 
 This will automatically create a branch called `gh-pages` and open a code editor window for the `index.md` file. This is a Markdown file that Jekyll will render into HTML to become the homepage for your project.
 
-Also, after a few minutes, your site will be live at `{{ site.data.lesson.example.user }}.github.io/projectname`!
+Also, after a few minutes, your site will be live at `username.github.io/reponame`!
 
 ![github pages editor window]({% include asset.html path="images/gh_pages_themeset.PNG" %})
 {:.captioned}

@@ -112,6 +112,11 @@ Alternatively, as a shortcut, you can simultaneously create and switch to a new 
 git checkout -b my-new-branch
 ~~~
 
+If there are already multiple branches, you can specify the branch from which you want to create your new branch: 
+`git checkout -b my-new-branch an-old-branch`. If you do not specify, the branch is created from the branch you are 
+currently in (which usually defaults to the `master` branch).
+{:.notes}
+
 ===
 
 ### Set up the local branch to track a branch on the remote repo
@@ -272,8 +277,7 @@ You can switch among branches with the dropdown menu in the Git tab.
 
 Unfortunately it's not possible to merge branches with the point-and-click interface so you are stuck with 
 the command line when it's time to `git merge my-new-branch`!
-
-This illustrates that the GUI is really only suitable for simple git actions.
+(This illustrates that the GUI is really only suitable for simple git actions.)
 
 [using-branches]: https://www.atlassian.com/git/tutorials/using-branches/
 [CC BY]: http://creativecommons.org/licenses/by/2.5/au/

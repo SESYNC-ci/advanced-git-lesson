@@ -15,6 +15,7 @@ This is just a plug to encourage everyone to make them a part of their workflow!
 
 - Pointing out a bug or feature request in someone else's repository
 - Making a to-do list for yourself
+- Managing projects by assigning tasks to collaborators
 - Maintaining a record of rich information about your work
 - Troubleshooting problems with code by searching existing issues
 

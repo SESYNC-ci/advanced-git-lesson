@@ -7,9 +7,7 @@
 {:.captioned}
 
 To *fork* a repo is to copy a repo from someone else's account into your account so that you can start your own project
-based on the existing repo, without having to push changes to the original owner's repo.
-
-A fork is not a separate operation from a clone. It is just a clone with a different remote origin. 
+based on the existing repo, without having to push changes to the original owner's repo. In git jargon, a fork is just a "clone with a different remote origin."
 
 If you fork a repo, it is probably going to be one where you aren't collaborating directly with its creator. The creator may
 continue to make updates, adding commits to their version's history, while you do the same. A good example would be if you are
@@ -48,6 +46,12 @@ git clone https://github.com/{{ site.data.lesson.example.user }}/fun.git
 ~~~bash
 Cloning into 'fun'...
 ~~~
+
+If you are using RStudio, an alternative to the command above is to
+simultaneously clone the repo and create an RStudio project by going to 
+`File > New Project > Version Control` and entering the repo URL. This will seamlessly
+integrate the version control with RStudio's project structure.
+{:.notes}
 
 ===
 

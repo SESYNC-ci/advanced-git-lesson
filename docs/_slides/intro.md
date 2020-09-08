@@ -9,16 +9,16 @@ It is incomplete and still in development. Please check back later. Thank you fo
 ## Lesson Objectives
 
 - Build on the techniques learned in the basic git lesson with more advanced topics
-- Learn how to use git and GitHub to work with collaborators inside and outside your immediate research group
+- Use git and GitHub to work with collaborators inside and outside your immediate research group
 - Publicize your work with GitHub Pages
 
 ===
 
 ## Specific Achievements
 
-- Create, modify, and merge branches for an improved workflow
+- Create, modify, and merge branches to reduce conflict within your project and with collaborators
 - Fork a repository to add your own contributions to someone else's project
-- Make and accept pull requests for smooth collaboration
+- Make and accept pull requests for smooth and respectful collaboration
 - Use GitHub Issues to document and manage your work
 - Create and edit GitHub Pages for your user account and for one of your projects
 
@@ -28,7 +28,7 @@ It is incomplete and still in development. Please check back later. Thank you fo
 
 You should be able to do the basic git actions described in the 
 [Basic git Lesson](https://cyberhelp.sesync.org/basic-git-lesson) 
-or the [Git in the Shell lesson](https://cyberhelp.sesync.org/git-in-the-shell-lesson) :
+or the [Git in the Shell lesson](https://cyberhelp.sesync.org/git-in-the-shell-lesson):
 set up a repo, stage changes, commit, push, and pull.
 
 ===

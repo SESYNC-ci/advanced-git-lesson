@@ -55,7 +55,7 @@ In order for GitHub to recognize that this repo is your personal site, you need 
 
 ===
 
-Clone the repo locally.
+Clone the repo locally, either using the command below or by creating an RStudio project.
 
 ~~~bash
 git clone https://github.com/{{ site.data.lesson.example.user }}/{{ site.data.lesson.example.user }}.github.io

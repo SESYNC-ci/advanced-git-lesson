@@ -15,10 +15,11 @@ This is just a plug to encourage everyone to make them a part of their workflow!
 
 - Pointing out a bug or feature request in someone else's repository
 - Making a to-do list for yourself
+- Managing projects by assigning tasks to collaborators
 - Maintaining a record of rich information about your work
 - Troubleshooting problems with code by searching existing issues
 
-![]({% include asset.html path="images/rslurm_issue_queue.PNG" %}){:width="60%" style="border: none; box-shadow: none;"}  
+![]({% include asset.html path="images/rslurm_issue_queue.PNG" %}){:width="75%" style="border: none; box-shadow: none;"}  
 *Example: rslurm's issue queue contains issues created by both collaborators and users*
 {:.captioned}
 
@@ -34,7 +35,7 @@ To reference commits, use the first 7 digits of the commit's hash (it will look 
 
 To reference pull requests and other issues, use the `#` sign followed by the number ID of the pull request or issue. They go up sequentially starting at `#1`.
 
-![]({% include asset.html path="images/rslurm_issue_example.png" %}){:width="60%" style="border: none; box-shadow: none;"}  
+![]({% include asset.html path="images/rslurm_issue_example.png" %}){:width="75%" style="border: none; box-shadow: none;"}  
 *Example: comments on an issue in rslurm referencing users and a pull request*
 {:.captioned}
 
@@ -46,7 +47,7 @@ You can put labels on issues to tag them by topic.
 
 You can also assign issues to collaborators on your project, to designate who is responsible for resolving the issue.
 
-![]({% include asset.html path="images/issue_assignees.png" %}){:width="60%" style="border: none; box-shadow: none;"}  
+![]({% include asset.html path="images/issue_assignees.png" %}){:width="75%" style="border: none; box-shadow: none;"}  
 *Example: issues assigned to different collaborators*
 {:.captioned}
 

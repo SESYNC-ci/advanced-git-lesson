@@ -35,7 +35,14 @@ Initialize the created repo with a README.md to give the Collaborator something 
 
 **Collaborator**: Fork the Owner's repo and clone it locally (because now you know how to do that!)
 
-Now make a change to the README.md. Stage, commit, and push (old hat by now!)
+Now make a change to the README.md. Stage, commit, and push.
+
+~~~bash
+git add README.md
+git commit "Edit README.md"
+git push
+~~~
+{:.text-document title="worksheet.sh"}
 
 The change you've pushed is now part of your forked copy of the repo, but is not
 yet incorporated into the Owner's repo. Time to make a pull request.

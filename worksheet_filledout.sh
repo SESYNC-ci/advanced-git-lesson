@@ -29,6 +29,14 @@ git clone https://github.com/{{ site.data.lesson.example.user }}/fun.git
 
 ## Pull Requests
 
+# Collaborator
+git clone https://github.com/(collaborator name)/(repo name).git
+
+git add README.md
+git commit "Edit README.md"
+git push
+
+# Owner
 git checkout -b pr_branch master
 
 git pull https://github.com/(collaborator name)/(repo name).git master
@@ -41,10 +49,17 @@ git push
 
 git branch -d pr_branch
 
+# Collaborator
+git pull https://github.com/(name of owner)/(name of repo).git master
+
 ## GitHub Pages
 
 ### Personal website
 git clone https://github.com/{{ site.data.lesson.example.user }}/{{ site.data.lesson.example.user }}.github.io
+
+git add _config.yml
+git commit -m "Add site title to config"
+git push
 
 ### Project page
 git checkout -b gh-pages

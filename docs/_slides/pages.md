@@ -7,7 +7,7 @@ GitHub provides free* web hosting through GitHub Pages. You can create a site as
 (`{{ site.data.lesson.example.user }}.github.io`) or a page for any of your repos 
 (`{{ site.data.lesson.example.user }}.github.io/mycoolproject`). 
 
-\* = *Because GitHub is owned by Microsoft it is not guaranteed that any of the services they provide will be free forever. It is for now.*
+\* *Because GitHub is owned by Microsoft it is not guaranteed that any of the services they provide will be free forever. It is for now.*
 
 ===
 
@@ -22,10 +22,15 @@ Markdown or RMarkdown files to HTML, or manually.
 There are many ways to customize the layout and theme of your page. This lesson does not go into
 much detail about that. The first place to look for more information is 
 [the official GitHub Pages documentation](https://docs.github.com/en/github/working-with-github-pages). 
-We have also compiled [a list of resources, tutorials, and templates](https://github.com/SESYNC-ci/sesync-ci.github.io/blob/master/blog/_drafts/github-pages-resources.md).
+We have also compiled [a list of resources, tutorials, and templates](https://cyberhelp.sesync.org/blog/github-pages-resources.html).
 {:.notes}
 
-<!-- Replace the link to draft blog post with a real one when it's made -->
+The [Minimal Mistakes theme](https://github.com/mmistakes/minimal-mistakes) is one of the most widely used free templates. 
+You can fork the Minimal Mistakes repo into your account and add your content to it.
+[Academic Pages](https://github.com/academicpages/academicpages.github.io) is a modified version of Minimal Mistakes 
+that is designed for academics.
+If you use either of these templates, consider donating to the developer on PayPal.
+{:.notes}
 
 All the [SESYNC cyberhelp lesson pages](https://cyberhelp.sesync.org/lesson/) were created with GitHub Pages, 
 including this one! 
@@ -38,24 +43,35 @@ and many academic pages including [this lab website](http://nelson.rbind.io/).
 
 ### Creating a personal site
 
-In this example, we will create a page associated with your user account by forking a pre-made template.
+In this example, we will create a page associated with your user account.
 
-The [Minimal Mistakes theme](https://github.com/mmistakes/minimal-mistakes) is probably the most widely used free template. 
-If you use this site template, consider donating to the developer on PayPal.
+Create a new repo on GitHub.com. In order for GitHub to recognize that this repo is your personal site, 
+you need to name it `(your username).github.io`. 
 
 ===
 
-Go to the repo page for Minimal Mistakes on GitHub.com and fork the repo into your account.
+Next, go to the **Settings** page of your repo and scroll down to the
+**GitHub Pages** section.
 
-In order for GitHub to recognize that this repo is your personal site, you need to change the repo name to 
-`(your username).github.io`. This option is at the top of the **Settings** page of your repo.
-
-![change repo name]({% include asset.html path="images/change_repo_name.PNG" %})
+![github pages settings]({% include asset.html path="images/gh_pages_settings.PNG" %})
 {:.captioned}
 
 ===
 
+Choose a pre-made Jekyll theme for your personal site.
+
+Your site is now being built at `(your username).github.io`! The first time will take a few 
+minutes but subsequent pushes will appear on the site after only a few seconds.
+
+You will be redirected to an editor window where you can modify the homepage (`index.md`).
+This is a Markdown file that Jekyll will render into HTML to become the homepage for your project.
+Of course, it is better practice not to edit files on the web; we need to clone the
+repo locally and edit the files there.
+
+===
+
 Clone the repo locally, either using the command below or by creating an RStudio project.
+Again, if you are cloning using the command line, make sure you are in the correct directory first.
 
 ~~~bash
 git clone https://github.com/{{ site.data.lesson.example.user }}/{{ site.data.lesson.example.user }}.github.io
@@ -68,10 +84,44 @@ Cloning into '{{ site.data.lesson.example.user }}.github.io'...
 
 ===
 
-The repo you forked contains a demo site with a number of different types of page layouts.
+The repo contains the bare bones of what Jekyll needs to build the site:
+a YAML configuration file called `_config.yml` and a homepage called `index.md`.
 
-When you push changes to this repo, the site will rebuild within a minute or two. 
-If there are no errors in the build, it will be updated on the server. 
+The `_config.yml` file currently contains only a single line, specifying the site theme.
+The leading underscore `_` of the filename tells Jekyll not to process the file as a page.
+
+===
+
+Let's add a title to the configuration file.
+There is a [Jekyll documentation page](https://jekyllrb.com/docs/variables/) listing
+the site-level variables you can include in the configuration file.
+
+Open `_config.yml` and add a line with your site title in quotes:
+
+~~~bash
+title: "My Site"
+~~~
+
+===
+
+Stage, commit, and push.
+
+~~~bash
+git add _config.yml
+git commit -m "Add site title to config"
+git push
+~~~
+{:.text-document title="worksheet.sh"}
+
+===
+
+The site will be rebuilt by Jekyll and you should see the new title shortly.
+
+If you would like to preview the site locally rather than having to push it
+live to the web to see your changes, you will need to install Jekyll
+on your local machine. Describing how to do that is out of the scope of this lesson. 
+Follow the [Jekyll installation instructions](https://jekyllrb.com/docs/).
+{:.notes}
 
 In Exercise 1 below, you will make a change to the homepage and push it.
 
@@ -82,17 +132,14 @@ In Exercise 1 below, you will make a change to the homepage and push it.
 In addition to your personal site at `username.github.io`, you can also make pages associated with your
 individual projects on GitHub.
 
-To make one of your GitHub repos into a page, go to the **Settings** page of your repo and scroll down to the
-**GitHub Pages** section.
-
-![github pages settings]({% include asset.html path="images/gh_pages_settings.PNG" %})
-{:.captioned}
+To make one of your GitHub repos into a page, go to the **Settings** page of one of your existing repos
+and scroll down to the **GitHub Pages** section as you did for your user page.
 
 ===
 
 Select a premade Jekyll theme for your page.
 
-This will automatically create a branch called `gh-pages` and open a code editor window for the `index.md` file. This is a Markdown file that Jekyll will render into HTML to become the homepage for your project.
+This will automatically create a branch called `gh-pages` and open a code editor window for the `index.md` file. 
 
 Also, after a few minutes, your site will be live at `username.github.io/reponame`!
 

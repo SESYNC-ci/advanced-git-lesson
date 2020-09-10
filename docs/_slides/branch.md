@@ -5,8 +5,11 @@
 
 A *branch* is a separate "version" of a repo with its own history --- it is not a separate copy, it exists within the repo where it was created.
 
+In the following images, circles represent successive commits through time, going from left to right.
+{:.notes}
+
 ![]({% include asset.html path="images/atlassian_branches.png" %}){:width="50%" style="border: none; box-shadow: none;"}  
-*[Image][using-branches] by Atlassian / [CC BY]*
+*Two feature branches created from the master branch, each with their own commit history. [Image][using-branches] by Atlassian / [CC BY]*
 {:.captioned}
 
 The expectation is that you are going to make some changes to temporarily test things out, and then either merge the
@@ -21,7 +24,7 @@ GitHub are going to change this name to something like "main" or "primary" in fu
 calling it the master branch in this lesson; expect this to change sometime in the near future.
 
 ![]({% include asset.html path="images/atlassian_merge_before.png" %}){:width="50%" style="border: none; box-shadow: none;"}  
-*[Image][using-branches] by Atlassian / [CC BY]*
+*The master and feature branch have a common base but different tips (current states). [Image][using-branches] by Atlassian / [CC BY]*
 {:.captioned}
 
 *A clarifying note*: The distinction between, on the one hand, local versus remote (origin) and, on the other hand, the primary
@@ -69,7 +72,7 @@ It's also a good idea to use branches to test out changes to websites hosted on 
 
 1. Create a new branch locally
 1. Switch to the new branch locally.
-1. Set the local branch to track a remote branch.
+1. Push the local branch to the remote repo.
 1. Make some changes, stage, commit, and push (repeat as needed).
 1. Merge the branch back into the master branch.
 
@@ -119,7 +122,7 @@ currently in (which usually defaults to the `master` branch).
 
 ===
 
-### Set up the local branch to track a branch on the remote repo
+### Push the local branch to the remote repo 
 
 We need to add the newly created branch to the origin (remote repo) so that changes we commit and push
 are pushed to that branch and not the master. Do this using `git push` with the `-u` option,
@@ -131,6 +134,8 @@ git push -u origin my-new-branch
 ~~~
 {:.text-document title="worksheet.sh"}
 
+===
+
 You will see this at the bottom of the output:
 
 ~~~bash
@@ -138,7 +143,8 @@ You will see this at the bottom of the output:
 Branch my-new-branch set up to track remote branch my-new-branch from origin.
 ~~~
 
-Future pushes can be done using only `git push`.
+Now that the local branch is set up to track the remote branch with the same name,
+future pushes can be done using only `git push`.
 
 ===
 
@@ -221,6 +227,11 @@ git branch -d my-new-branch
 ~~~bash
 Deleted branch my-new-branch (was f06a00c)
 ~~~
+
+Sometimes you will get a warning if the branch you are deleting has not been fully merged.
+You can override this warning and delete an unmerged branch by replacing the `-d` with `-D`,
+as in `git branch -D my-new-branch`.
+{:.notes}
 
 ===
 

@@ -9,9 +9,7 @@ These exercises will give you a chance to practice the advanced git techniques y
 ### Exercise 1
 
 - Create a local branch in your GitHub Pages repo (`yourname.github.io`).
-- Edit the `docs/_config.yml` file to change the title and base URL of the site.
-- Edit the `docs/_pages/about.md` file to replace some of the demo text with your own text.
-- Preview the HTML using the "Preview" button at the top of the code editor pane in RStudio.
+- Edit the `index.md` file to say something about yourself.
 - When you are satisfied, stage, commit, and push the change to the branch on the remote origin.
 - Merge the branch back into the master branch and push the master branch to the remote.
 - Take a look at your newly modified site!
@@ -45,7 +43,7 @@ This exercise should be done in pairs. Take turns being the Owner and Collaborat
 ### Exercise 1
 
 - In the repo you created for your personal GitHub Page (`yourname.github.io`), execute `git checkout -b (name of new branch)`.
-- Open `docs/_config.yml` and `docs/_pages/about.md` locally and edit them as described above.
+- Open `docs/_config.yml` and `docs/_pages/about.md` locally and edit them as described above. **FIXME this is now outdated**
 - Stage, commit, and push: 
 
 ```
@@ -76,7 +74,7 @@ git push origin --delete (name of new branch)
 
 - Navigate to `https://github.com/(username of owner)/(name of repo)` and select "Fork" in the upper right to fork the 
 repo into your own account.
-- Clone the repo by going to your terminal locally and executing `git clone https://github.com/(username of collaborator)/(name of repo).git`.
+- Clone the repo by going to your terminal locally and executing `git clone https://github.com/(your username)/(name of repo).git`.
 - Create the branch, specifying that you are creating it from `gh-pages`, and set it up to track the remote.
 
 ```
@@ -93,8 +91,8 @@ git commit -m "Edit index.md"
 git push
 ```
 
-- Navigate to `https://github.com/(username of owner)/(name of repo)` again and open the "Pull Requests" tab.
-- When prompted to select branches to compare, select your new branch and the Owner's `gh-pages` branch.
+- Navigate to `https://github.com/(your username)/(name of repo)` and open the "Pull Requests" tab.
+- When prompted to select branches to compare (across forks), select your new branch and the Owner's `gh-pages` branch.
 
 **Owner**:
 
@@ -110,11 +108,12 @@ page on github.com for their forked repo, open the "Settings" tab, click "Manage
 the proper permissions. Then you can edit the file and stage-commit-push as usual.
 - Navigate to `https://github.com/(username of owner)/(name of repo)` and open the "Pull Requests" tab.
 - Accept the pull request through the interface on the website.
-- Pull the `gh-pages` branch locally:
+- Pull the `gh-pages` branch locally because you merged on the website:
 
 ```
 git checkout gh-pages
-git pull
+git pull origin gh-pages
 ```
 
-- Delete the pull request branch locally using `git branch -d collab-pullrequest-branch`.
+- Delete the pull request branch locally using `git branch -D collab-pullrequest-branch`. 
+(The `-D` is needed to confirm that you are deleting an unmerged branch, because you merged it remotely not locally.)

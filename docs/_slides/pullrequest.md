@@ -43,13 +43,16 @@ yet incorporated into the Owner's repo. Time to make a pull request.
 ===
 
 **Collaborator**: Go to the "Pull Requests" tab in the Owner's repository. You should see something like this.
+Click on "New pull request."
 
 ![pull request page]({% include asset.html path="images/pullrequest_forkedrepo.png" %})
 {:.captioned}
 
 ===
 
-**Collaborator**: Specify that you want to compare the `master` branch of your forked repository 
+**Collaborator**: Specify that you want to "compare across forks" because you are making a pull request
+from your forked repo to the Owner's repo, rather than across branches within the same copy of the repo.
+Compare the `master` branch of your forked repository 
 with the `master` branch of the current repository, then click "Create pull request."
 
 ![pull request compare step]({% include asset.html path="images/pullrequest_compare.png" %})
@@ -66,20 +69,26 @@ in the hope that he or she will accept the request and add your changes to the p
 
 **Owner**: As the owner, you will receive an email saying that someone has made a pull request on your repo. 
 
-Your options are:
+By default you are "watching" any repo you create, meaning you will receive emails for new pull requests and new issues.
+You can disable this by selecting "Unwatch" in the upper right of the repo page on GitHub.
+{:.notes}
+
+When you receive a pull request, you can do one of the following:
 
 - Accept the pull request as is
 - Make additional changes to the pull request and then accept
 - Decline the pull request
 
+In this example, we will simulate accepting the pull request without any additional modifications.
+
 ===
 
-**Owner**: Even though the PR page shows that there are no conflicts, it is good practice to test the 
+**Owner**: Even though the PR page shows that there are no conflicts, it is good practice to review the 
 code before accepting and merging the PR. To do this, you need to create a new branch locally for 
 the PR, and then pull the Collaborator's changes into that local branch.
 
 We will follow the command line instructions that GitHub helpfully provides.
-First create a new branch and switch to it.
+First create a new branch locally and switch to it.
 
 ~~~bash
 git checkout -b pr-branch
@@ -92,7 +101,7 @@ Switched to a new branch 'pr-branch'
 
 ===
 
-**Owner**: Pull the Collaborator's changes from the master branch of their forked version
+Pull the changes from the master branch of the Collaborator's forked version
 of the repo into the newly created branch.
 
 ~~~bash
@@ -102,7 +111,12 @@ git pull https://github.com/(collaborator name)/(repo name).git master
 
 ===
 
-After you have tested the code, you can accept the PR by merging the changes from the command line.
+After you have reviewed the code, accept the PR. There are two different ways to do this.
+You can either merge the PR into your master branch locally and then push to the remote,
+or you can merge the PR into your master branch on the remote repo on GitHub, and then pull
+the merged master branch locally.
+
+This is how to merge the PR locally and push to the remote:
 
 **Owner**: Checkout your master branch again and merge the PR branch into it. The `--no-ff` flag ensures
 that git will create a merge so that it's obvious later on that a pull request was made.
@@ -142,8 +156,12 @@ pull requests.
 ![pull request page]({% include asset.html path="images/closed_prs.PNG" %}){:width="60%"}
 {:.captioned}
 
-The commits made by your collaborator, and the modifications you made on top of them, are both part of 
-the master branch of the repo. 
+The commits made by your collaborator, and any modifications you may have made on top of them, 
+are both part of the master branch of the repo. 
+
+An alternative to the above is to merge the pull request on GitHub.com (follow the point-and-click
+instructions), then `git pull` into your master branch locally to get the merged changes.
+{:.notes}
 
 ===
 
@@ -161,8 +179,18 @@ git branch -d pr-branch
 ===
 
 **Collaborator**: Now that the owner has merged your PR with the master branch on his or her repo,
-you can pull and check out that master branch. You can continue to periodically pull the owner's
-new commits to your local repo.
+you should receive an email notifying you that your PR was merged.
+
+Now you want to bring your repo up to date with the Owner's again.
+To pull new changes from the master branch of the Owner's repo into your forked repo, you
+need to specify that you are pulling from the Owner's repo in your call to `git pull`.
+
+~~~bash
+git pull https://github.com/(name of owner)/(name of repo).git master
+~~~
+{:.text-document title="worksheet.sh"}
+
+You will be prompted to resolve merge conflicts if any exist.
 
 ===
 

@@ -3,8 +3,6 @@
 
 ## GitHub Issues
 
-**FIXME add some more examples/details about issues**
-
 Issues are a useful feature of GitHub.com that can greatly improve your workflow. 
 The user interface is fairly easy to figure out. 
 This is just a plug to encourage everyone to make them a part of their workflow!

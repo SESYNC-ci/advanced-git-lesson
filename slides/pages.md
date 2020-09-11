@@ -187,10 +187,9 @@ window will pop up prompting you to enter a merge commit message.
 
 You need to confirm this message and quit Vim by typing `:q` and pressing `Enter`.
 
-Hopefully you don't get stuck in Vim, which is [notoriously hard to exit!](https://stackoverflow.com/questions/11828270/how-do-i-exit-the-vim-editor)
+Hopefully you don't get stuck in Vim, which is [notoriously hard to exit](https://stackoverflow.com/questions/11828270/how-do-i-exit-the-vim-editor).
 
-![github pages editor window]({% include asset.html path="images/vimmeme.png" %})
-*A few "exiting vim" memes*
+![exit vim memes]({% include asset.html path="images/vimmeme.png" %})
 {:.captioned}
 
 ===

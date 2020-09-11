@@ -43,7 +43,7 @@ git pull https://github.com/(collaborator name)/(repo name).git master
 
 git checkout master
 
-git merge --no-ff pr_branch
+git merge pr_branch
 
 git push
 

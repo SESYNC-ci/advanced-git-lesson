@@ -25,11 +25,12 @@ git push ... my-new-branch
 
 ## Forks
 
+# Use the git clone command, or if you prefer use the "New project" dialog in RStudio
 git clone ...
 
 ## Pull Requests
 
-# Collaborator: clone repo, or use RStudio dialog to do this
+# Collaborator: clone repo, or use RStudio "New project" dialog 
 git ...
 
 # Collaborator: stage, commit, and push
@@ -45,7 +46,7 @@ git ... https://github.com/... master
 
 # Owner: merge the PR branch and cleanup
 git ...
-git ... --no-ff ...
+git ...
 git ...
 git branch ...
 
@@ -55,6 +56,8 @@ git pull ... master
 ## GitHub Pages
 
 ### Personal website
+
+# Clone the repo or use RStudio "New project" dialog
 git clone ...
 
 ... _config.yml

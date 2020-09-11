@@ -43,13 +43,12 @@ This exercise should be done in pairs. Take turns being the Owner and Collaborat
 ### Exercise 1
 
 - In the repo you created for your personal GitHub Page (`yourname.github.io`), execute `git checkout -b (name of new branch)`.
-- Open `docs/_config.yml` and `docs/_pages/about.md` locally and edit them as described above. **FIXME this is now outdated**
+- Open `index.md` and add some text.
 - Stage, commit, and push: 
 
 ```
-git add docs/_config.yml
-git add docs/_pages/about.md
-git commit -m "Add my name and title, add content"
+git add index.md
+git commit -m "Add content"
 git push -u origin (name of new branch)
 ```
 

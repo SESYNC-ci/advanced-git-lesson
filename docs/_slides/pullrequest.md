@@ -33,9 +33,29 @@ Initialize the created repo with a README.md to give the Collaborator something 
 
 ===
 
-**Collaborator**: Fork the Owner's repo and clone it locally (because now you know how to do that!)
+**Collaborator**: Fork the Owner's repo and clone it locally.
 
-Now make a change to the README.md. Stage, commit, and push (old hat by now!)
+As before, you can either do this from the command line with the command below, or use the "New project" dialog in RStudio.
+
+~~~bash
+git clone https://github.com/(collaborator name)/(repo name).git
+~~~
+{:.text-document title="worksheet.sh"}
+
+~~~bash
+Cloning into 'repo name'...
+~~~
+
+===
+
+Now make a change to the README.md. Stage, commit, and push.
+
+~~~bash
+git add README.md
+git commit "Edit README.md"
+git push
+~~~
+{:.text-document title="worksheet.sh"}
 
 The change you've pushed is now part of your forked copy of the repo, but is not
 yet incorporated into the Owner's repo. Time to make a pull request.
@@ -116,10 +136,11 @@ You can either merge the PR into your master branch locally and then push to the
 or you can merge the PR into your master branch on the remote repo on GitHub, and then pull
 the merged master branch locally.
 
-This is how to merge the PR locally and push to the remote:
+In this example you will  merge the PR locally and push to the remote.
 
-**Owner**: Checkout your master branch again and merge the PR branch into it. The `--no-ff` flag ensures
-that git will create a merge so that it's obvious later on that a pull request was made.
+===
+
+**Owner**: Checkout your master branch again.
 
 ~~~bash
 git checkout master
@@ -131,13 +152,17 @@ Switched to branch 'master'
 Your branch is up to date with 'origin/master'.
 ~~~
 
+===
+
+Merge `pr-branch` into the `master` branch, then push to the remote.
+
 ~~~bash
-git merge --no-ff pr-branch
+git merge pr-branch
 ~~~
 {:.text-document title="worksheet.sh"}
 
 ~~~bash
-Merge made by the 'recursive' strategy.
+Fast-forward
  README.md | 2 ++
  1 file changed, 2 insertions(+)
 ~~~

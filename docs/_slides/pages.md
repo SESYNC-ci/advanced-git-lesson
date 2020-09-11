@@ -154,7 +154,8 @@ Let's use our newfound branching skills to do that!
 
 ===
 
-First, go to your terminal, create a branch called `gh-pages` and switch to it.
+First, open the RStudio project for the repo you just added a page to. 
+Go to your terminal, create a branch called `gh-pages` and switch to it.
 
 ~~~bash
 git checkout -b gh-pages

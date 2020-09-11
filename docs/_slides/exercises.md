@@ -33,7 +33,7 @@ This exercise should be done in pairs. Take turns being the Owner and Collaborat
 - Create a new local branch and pull the Collaborator's pull request branch into it.
 - Review the changes the Collaborator made, modifying if necessary by adding additional commits. 
 *Note: if you want to add commits to the Collaborator's branch, the Collaborator will have to give you push access to it on GitHub.*
-- Accept the pull request on GitHub, merging the Collaborator's branch with your `gh-pages` branch.
+- Accept the pull request on GitHub.com, merging the Collaborator's branch with your `gh-pages` branch.
 - Pull the newly merged `gh-pages` branch locally.
 - Take a look at your newly modified project page!
 - If you like, delete the pull request branch locally.
@@ -106,8 +106,8 @@ git pull https://github.com/(collaborator name)/(repo name).git (name of pull re
 page on github.com for their forked repo, open the "Settings" tab, click "Manage access", and invite you with 
 the proper permissions. Then you can edit the file and stage-commit-push as usual.
 - Navigate to `https://github.com/(username of owner)/(name of repo)` and open the "Pull Requests" tab.
-- Accept the pull request through the interface on the website.
-- Pull the `gh-pages` branch locally because you merged on the website:
+- Accept the pull request through the interface on GitHub.com.
+- Pull the `gh-pages` branch locally (because you merged remotely):
 
 ```
 git checkout gh-pages

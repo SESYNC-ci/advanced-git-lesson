@@ -52,11 +52,13 @@ If you are using RStudio, an alternative to the command above is to
 simultaneously clone the repo and create an RStudio project by going to 
 `File > New Project > Version Control` and entering the repo URL. This will seamlessly
 integrate the version control with RStudio's project structure.
+If there are no .Rproj or .gitignore files in the repo you are cloning, this will create them.
 {:.notes}
 
 ===
 
 Now, when you commit and push changes to this repo, they will be pushed to the copy you
-own rather than the owner's original copy. So if you are directly working with
-a collaborator on the same project, you would just want to clone (not fork) the repo and 
+own rather than the owner's original copy. You probably do *not* want this behavior
+if you are directly working with a collaborator on the same project.
+In that case, you would just want to clone (not fork) the repo and 
 keep the same remote origin as the collaborator.

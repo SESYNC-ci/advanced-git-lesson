@@ -29,6 +29,9 @@ git clone https://github.com/{{ site.data.lesson.example.user }}/fun.git
 
 ## Pull Requests
 
+# Owner
+git clone https://github.com/(owner name)/(repo name).git
+
 # Collaborator
 git clone https://github.com/(collaborator name)/(repo name).git
 
@@ -49,9 +52,6 @@ git push
 
 git branch -d pr_branch
 
-# Collaborator
-git pull https://github.com/(name of owner)/(name of repo).git master
-
 ## GitHub Pages
 
 ### Personal website
@@ -63,4 +63,4 @@ git push
 
 ### Project page
 git checkout -b gh-pages
-git pull origin gh-pages --allow-unrelated-histories
+git pull origin gh-pages --no-edit

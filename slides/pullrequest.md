@@ -26,6 +26,8 @@ If you don't have a repo you own to practice on, quickly create one on GitHub.co
 Make sure it is a public repo so that the Collaborator can clone it. However, you do not need to 
 give the Collaborator push access.
 
+===
+
 Initialize the created repo with a README.md to give the Collaborator something to work with.
 
 ![initialize repo dialog box]({% include asset.html path="images/create_new_repo_for_pr.PNG" %}){:width="60%"}
@@ -33,9 +35,22 @@ Initialize the created repo with a README.md to give the Collaborator something 
 
 ===
 
-**Collaborator**: Fork the Owner's repo and clone it locally.
+If you haven't already, clone the repo locally, either with the command line or using the "New Project" dialog in RStudio.
 
-As before, you can either do this from the command line with the command below, or use the "New project" dialog in RStudio.
+~~~bash
+git clone https://github.com/(owner name)/(repo name).git
+~~~
+{:.text-document title="worksheet.sh"}
+
+~~~bash
+Cloning into 'repo name'...
+~~~
+
+===
+
+**Collaborator**: Fork the Owner's repo (on GitHub.com) and then clone it locally.
+
+As before, you can either do this from the command line with the command below, or with the "New project" dialog.
 
 ~~~bash
 git clone https://github.com/(collaborator name)/(repo name).git
@@ -206,14 +221,13 @@ git branch -d pr-branch
 **Collaborator**: Now that the owner has merged your PR with the master branch on his or her repo,
 you should receive an email notifying you that your PR was merged.
 
-Now you want to bring your repo up to date with the Owner's again.
-To pull new changes from the master branch of the Owner's repo into your forked repo, you
+Your repo should now be up to date with the Owner's. However, in the future, if you want
+to pull new changes from the master branch of the Owner's repo into your forked repo, you
 need to specify that you are pulling from the Owner's repo in your call to `git pull`.
 
 ~~~bash
 git pull https://github.com/(name of owner)/(name of repo).git master
 ~~~
-{:.text-document title="worksheet.sh"}
 
 You will be prompted to resolve merge conflicts if any exist.
 

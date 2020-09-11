@@ -140,8 +140,9 @@ and scroll down to the **GitHub Pages** section as you did for your user page.
 Select a premade Jekyll theme for your page.
 
 This will automatically create a branch called `gh-pages` and open a code editor window for the `index.md` file. 
+You can close this window without any further action needed.
 
-Also, after a few minutes, your site will be live at `username.github.io/reponame`!
+After a few minutes, your site will be live at `username.github.io/reponame`!
 
 ![github pages editor window]({% include asset.html path="images/gh_pages_themeset.PNG" %})
 {:.captioned}
@@ -149,6 +150,7 @@ Also, after a few minutes, your site will be live at `username.github.io/reponam
 ===
 
 Instead of editing the Markdown online, it's better to pull the `gh-pages` branch locally, make changes, and commit and push them back up to the remote repo. 
+
 
 Let's use our newfound branching skills to do that!
 
@@ -170,8 +172,13 @@ Switched to a new branch 'gh-pages'
 
 Next, pull the `gh-pages` branch from the remote origin.
 
+You need to use the `--no-edit` option to tell git that you want it to merge 
+the remote and local branches without further confirmation from you.
+{:.notes}
+<!-- change this to "allow unrelated histories" once git is updated on the rstudio server!!! -->
+
 ~~~bash
-git pull origin gh-pages --allow-unrelated-histories
+git pull origin gh-pages --no-edit
 ~~~
 {:.text-document title="worksheet.sh"}
 
@@ -184,9 +191,6 @@ Merge made by the 'recursive' strategy.
  create mode 100644 _config.yml
  create mode 100644 index.md
 ~~~
-
-You need to use the `--allow-unrelated-histories` option or you will get an error. The `gh-pages` branch was created with a fresh history that does not include the old commit history from the master branch.
-{:.notes}
 
 ===
 

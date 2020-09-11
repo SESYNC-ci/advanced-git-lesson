@@ -145,6 +145,7 @@ You can close this window without any further action needed.
 After a few minutes, your site will be live at `username.github.io/reponame`!
 
 ![github pages editor window]({% include asset.html path="images/gh_pages_themeset.PNG" %})
+*This window will pop up but no further action is needed.*
 {:.captioned}
 
 ===
@@ -172,15 +173,27 @@ Switched to a new branch 'gh-pages'
 
 Next, pull the `gh-pages` branch from the remote origin.
 
-You need to use the `--no-edit` option to tell git that you want it to merge 
-the remote and local branches without further confirmation from you.
-{:.notes}
 <!-- change this to "allow unrelated histories" once git is updated on the rstudio server!!! -->
 
 ~~~bash
-git pull origin gh-pages --no-edit
+git pull origin gh-pages
 ~~~
 {:.text-document title="worksheet.sh"}
+
+===
+
+Because this is merging a branch with a different history, a Vim text editor
+window will pop up prompting you to enter a merge commit message.
+
+You need to confirm this message and quit Vim by typing `:q` and pressing `Enter`.
+
+Hopefully you don't get stuck in Vim, which is [notoriously hard to exit!](https://stackoverflow.com/questions/11828270/how-do-i-exit-the-vim-editor)
+
+![github pages editor window]({% include asset.html path="images/vimmeme.png" %})
+*A few "exiting vim" memes*
+{:.captioned}
+
+===
 
 ~~~bash
  * branch            gh-pages   -> FETCH_HEAD

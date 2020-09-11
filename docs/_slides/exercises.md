@@ -102,6 +102,7 @@ git checkout -b collab-pullrequest-branch
 git pull https://github.com/(collaborator name)/(repo name).git (name of pull request branch)
 ```
 
+- You will need to sign off on the merge commit message and quit Vim by typing `:wq` and pressing `Enter`.
 - Open and view `index.md`. If you want to add a commit to this, you can do so by having the Collaborator go to the
 page on github.com for their forked repo, open the "Settings" tab, click "Manage access", and invite you with 
 the proper permissions. Then you can edit the file and stage-commit-push as usual.
@@ -114,5 +115,6 @@ git checkout gh-pages
 git pull origin gh-pages
 ```
 
+- Again you will need to sign off on the merge commit message and quit Vim by typing `:wq` and pressing `Enter`.
 - Delete the pull request branch locally using `git branch -D collab-pullrequest-branch`. 
 (The `-D` is needed to confirm that you are deleting an unmerged branch, because you merged it remotely not locally.)

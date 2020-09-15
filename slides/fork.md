@@ -6,6 +6,8 @@
 ![forky]({% include asset.html path="images/forky.jpeg" %}){:width="30%" style="border: none; box-shadow: none;"}  
 {:.captioned}
 
+===
+
 To *fork* a repo is to copy a repo from someone else's account into your account so that you can start your own project
 based on the existing repo, without having to push changes to the original owner's repo. In git jargon, a fork is just a "clone with a different remote origin."
 
@@ -26,11 +28,13 @@ want them to incorporate your changes into their version of the repo, you would 
 
 To fork a repo on GitHub, just go to the repo page and click "Fork" in the upper right-hand corner.
 
-In this example we will fork the [fun](){:.rlib} R package, originally developed by Yihui Xie. 
-Go to <https://github.com/yihui/fun> and fork the repo into your account.
-
 ![fork fun repo]({% include asset.html path="images/github_fork_fun.PNG" %})
 {:.captioned}
+
+===
+
+In this example we will fork the [fun](){:.rlib} R package, originally developed by Yihui Xie. 
+Go to <https://github.com/yihui/fun> and fork the repo into your account.
 
 ===
 
@@ -60,10 +64,9 @@ If there are no .Rproj or .gitignore files in the repo you are cloning, this wil
 *These are the three steps to follow to clone the project with RStudio's dialog.*
 {:.captioned}
 
-===
-
 Now, when you commit and push changes to this repo, they will be pushed to the copy you
 own rather than the owner's original copy. You probably do *not* want this behavior
 if you are directly working with a collaborator on the same project.
 In that case, you would just want to clone (not fork) the repo and 
 keep the same remote origin as the collaborator.
+{:.notes}

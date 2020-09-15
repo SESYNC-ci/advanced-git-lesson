@@ -3,10 +3,6 @@
 
 ## Lesson Objectives
 
-**This lesson is in [pre-alpha](https://en.wikipedia.org/wiki/Software_release_life_cycle#Pre-alpha) status!**
-It is incomplete and still in development. Please check back later. Thank you for your patience.
-{:.notes}
-
 - Build on the techniques learned in the basic git lesson with more advanced topics
 - Use git and GitHub to work with collaborators inside and outside your immediate research group
 - Publicize your work with GitHub Pages

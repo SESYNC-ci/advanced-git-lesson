@@ -17,6 +17,8 @@ This is just a plug to encourage everyone to make them a part of their workflow!
 - Maintaining a record of rich information about your work
 - Troubleshooting problems with code by searching existing issues
 
+===
+
 ![]({% include asset.html path="images/rslurm_issue_queue.PNG" %}){:width="75%" style="border: none; box-shadow: none;"}  
 *Example: rslurm's issue queue contains issues created by both collaborators and users*
 {:.captioned}
@@ -27,11 +29,15 @@ This is just a plug to encourage everyone to make them a part of their workflow!
 
 You can reference users, commits, pull requests, and other issues in the text of your issue, and they will automatically be linked.
 
+===
+
 To reference users, use the `@` sign followed by their name.
 
 To reference commits, use the first 7 digits of the commit's hash (it will look something like `5d1001b`).
 
 To reference pull requests and other issues, use the `#` sign followed by the number ID of the pull request or issue. They go up sequentially starting at `#1`.
+
+===
 
 ![]({% include asset.html path="images/rslurm_issue_example.png" %}){:width="75%" style="border: none; box-shadow: none;"}  
 *Example: comments on an issue in rslurm referencing users and a pull request*

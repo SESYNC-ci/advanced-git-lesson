@@ -63,6 +63,8 @@ Choose a pre-made Jekyll theme for your personal site.
 Your site is now being built at `(your username).github.io`! The first time will take a few 
 minutes but subsequent pushes will appear on the site after only a few seconds.
 
+===
+
 You will be redirected to an editor window where you can modify the homepage (`index.md`).
 This is a Markdown file that Jekyll will render into HTML to become the homepage for your project.
 Of course, it is better practice not to edit files on the web; we need to clone the
@@ -142,6 +144,8 @@ Select a premade Jekyll theme for your page.
 This will automatically create a branch called `gh-pages` and open a code editor window for the `index.md` file. 
 You can close this window without any further action needed.
 
+===
+
 After a few minutes, your site will be live at `username.github.io/reponame`!
 
 ![github pages editor window]({% include asset.html path="images/gh_pages_themeset.PNG" %})
@@ -186,6 +190,8 @@ Because this is merging a branch with a different history, a Vim text editor
 window will pop up prompting you to enter a merge commit message.
 
 You need to confirm this message and quit Vim by typing `:q` and pressing `Enter`.
+
+===
 
 Hopefully you don't get stuck in Vim, which is [notoriously hard to exit](https://stackoverflow.com/questions/11828270/how-do-i-exit-the-vim-editor).
 

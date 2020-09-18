@@ -28,6 +28,7 @@ img + br + em {
 
 .reveal pre code {
     max-height: unset;
+    font-size: 75%;
 }
 .reveal .output {
     display: none;

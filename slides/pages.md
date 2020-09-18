@@ -148,7 +148,7 @@ You can close this window without any further action needed.
 
 After a few minutes, your site will be live at `username.github.io/reponame`!
 
-![github pages editor window]({% include asset.html path="images/gh_pages_themeset.PNG" %})
+![github pages editor window]({% include asset.html path="images/gh_pages_themeset.PNG" %}){:width="75%" style="border: none; box-shadow: none;"}  
 *This window will pop up but no further action is needed.*
 {:.captioned}
 

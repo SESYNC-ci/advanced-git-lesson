@@ -184,7 +184,7 @@ git branch -a
 You can also view the branches on GitHub. Switch between them with the dropdown menu or 
 view, create pull requests, or delete individual branches by clicking on "View all branches."
 
-![github branches dropdown]({% include asset.html path="images/github_branch_dropdown.PNG" %})
+![github branches dropdown]({% include asset.html path="images/github_branch_dropdown.PNG" %}){:width="50%" style="border: none; box-shadow: none;"}  
 {:.captioned}
 
 

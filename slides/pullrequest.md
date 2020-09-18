@@ -85,9 +85,9 @@ Click on "New pull request."
 
 ===
 
-**Collaborator**: Specify that you want to "compare across forks" because you are making a pull request
-from your forked repo to the Owner's repo, rather than across branches within the same copy of the repo.
-Compare the `master` branch of your forked repository 
+**Collaborator**: Specify that you want to "compare across forks." You are making a PR
+from your fork to the Owner's repo, rather than across branches within the same copy of the repo.
+Compare the `master` branch of your fork 
 with the `master` branch of the current repository, then click "Create pull request."
 
 ![pull request compare step]({% include asset.html path="images/pullrequest_compare.png" %})

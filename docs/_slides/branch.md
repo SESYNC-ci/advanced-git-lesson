@@ -9,7 +9,7 @@ In the following images, circles represent successive commits through time, goin
 {:.notes}
 
 ![]({% include asset.html path="images/atlassian_branches.png" %}){:width="50%" style="border: none; box-shadow: none;"}  
-*Two feature branches created from the master branch, each with their own commit history. [Image][using-branches] by Atlassian / [CC BY]*
+*Two branches created from the master branch, each with their own commit history. [Image][using-branches] by Atlassian / [CC BY]*
 {:.captioned}
 
 The expectation is that you are going to make some changes to temporarily test things out, and then either merge the
@@ -20,8 +20,8 @@ the changes you made there.
 ===
 
 The primary branch, from which side branches are typically made, is called the **master** branch by default, although git and
-GitHub are going to change this name to something like "main" or "primary" in future versions. To avoid confusion we are still
-calling it the master branch in this lesson; expect this to change sometime in the near future.
+GitHub plan to change this name to "main" or "primary" in future versions. To avoid confusion we are still
+calling it the master branch in this lesson for now.
 
 ![]({% include asset.html path="images/atlassian_merge_before.png" %}){:width="50%" style="border: none; box-shadow: none;"}  
 *The master and feature branch have a common base but different tips (current states). [Image][using-branches] by Atlassian / [CC BY]*
@@ -33,6 +33,15 @@ local and remote copies of the repository. The local and remote branches are not
 But if you want to push to, or pull from, the remote, the
 default will be the master branch unless you specify which branch you are pushing, or pulling.
 {:.notes}
+
+===
+
+When you are finished working in a branch, you can merge the branch back into the master branch.
+This will incorporate the work you've done into the "official" version of the repository.
+
+![]({% include asset.html path="images/atlassian_merge_after.png" %}){:width="50%" style="border: none; box-shadow: none;"}  
+*A merge commit joins the feature branch back to the master branch. [Image][using-branches] by Atlassian / [CC BY]*
+{:.captioned}
 
 ===
 
@@ -61,10 +70,6 @@ In that situation, it is ideal to create a branch. If the branch is pushed to th
 will be accessible to other collaborators but not to people that download the master branch. 
 It's also a good idea to use branches to test out changes to websites hosted on GitHub Pages before going live.
 {:.notes}
-
-![]({% include asset.html path="images/atlassian_merge_after.png" %}){:width="50%" style="border: none; box-shadow: none;"}  
-*[Image][using-branches] by Atlassian / [CC BY]*
-{:.captioned}
 
 ===
 
@@ -179,7 +184,7 @@ git branch -a
 You can also view the branches on GitHub. Switch between them with the dropdown menu or 
 view, create pull requests, or delete individual branches by clicking on "View all branches."
 
-![github branches dropdown]({% include asset.html path="images/github_branch_dropdown.PNG" %})
+![github branches dropdown]({% include asset.html path="images/github_branch_dropdown.PNG" %}){:width="50%" style="border: none; box-shadow: none;"}  
 {:.captioned}
 
 

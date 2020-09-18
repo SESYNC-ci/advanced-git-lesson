@@ -28,7 +28,7 @@ want them to incorporate your changes into their version of the repo, you would 
 
 To fork a repo on GitHub, just go to the repo page and click "Fork" in the upper right-hand corner.
 
-![fork fun repo]({% include asset.html path="images/github_fork_fun.PNG" %})
+![fork fun repo]({% include asset.html path="images/github_fork_fun.PNG" %}){:width="50%" style="border: none; box-shadow: none;"}  
 {:.captioned}
 
 ===
@@ -54,11 +54,13 @@ Cloning into 'fun'...
 
 ===
 
-If you are using RStudio, an alternative to the command above is to
-simultaneously clone the repo and create an RStudio project by going to 
-`File > New Project > Version Control` and entering the repo URL. This will seamlessly
-integrate the version control with RStudio's project structure.
-If there are no .Rproj or .gitignore files in the repo you are cloning, this will create them.
+In RStudio, an alternative to the command above is to
+clone the repo into a new RStudio project by going to 
+`File > New Project > Version Control` and entering the repo URL. 
+
+This will integrate version control with RStudio's project structure.
+If there are no `.Rproj` or `.gitignore` files in the repo you are cloning, this will create them.
+{:.notes}
 
 ![RStudio three steps to create project]({% include asset.html path="images/threesteps_newproj.png" %})
 *These are the three steps to follow to clone the project with RStudio's dialog.*

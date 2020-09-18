@@ -85,9 +85,9 @@ Click on "New pull request."
 
 ===
 
-**Collaborator**: Specify that you want to "compare across forks" because you are making a pull request
-from your forked repo to the Owner's repo, rather than across branches within the same copy of the repo.
-Compare the `master` branch of your forked repository 
+**Collaborator**: Specify that you want to "compare across forks." You are making a PR
+from your fork to the Owner's repo, rather than across branches within the same copy of the repo.
+Compare the `master` branch of your fork 
 with the `master` branch of the current repository, then click "Create pull request."
 
 ![pull request compare step]({% include asset.html path="images/pullrequest_compare.png" %})
@@ -108,6 +108,8 @@ By default you are "watching" any repo you create, meaning you will receive emai
 You can disable this by selecting "Unwatch" in the upper right of the repo page on GitHub.
 {:.notes}
 
+===
+
 When you receive a pull request, you can do one of the following:
 
 - Accept the pull request as is
@@ -121,6 +123,8 @@ In this example, we will simulate accepting the pull request without any additio
 **Owner**: Even though the PR page shows that there are no conflicts, it is good practice to review the 
 code before accepting and merging the PR. To do this, you need to create a new branch locally for 
 the PR, and then pull the Collaborator's changes into that local branch.
+
+===
 
 We will follow the command line instructions that GitHub helpfully provides.
 First create a new branch locally and switch to it.
@@ -196,6 +200,8 @@ pull requests.
 ![pull request page]({% include asset.html path="images/closed_prs.PNG" %}){:width="60%"}
 {:.captioned}
 
+===
+
 The commits made by your collaborator, and any modifications you may have made on top of them, 
 are both part of the master branch of the repo. 
 
@@ -220,6 +226,8 @@ git branch -d pr-branch
 
 **Collaborator**: Now that the owner has merged your PR with the master branch on his or her repo,
 you should receive an email notifying you that your PR was merged.
+
+===
 
 Your repo should now be up to date with the Owner's. However, in the future, if you want
 to pull new changes from the master branch of the Owner's repo into your forked repo, you

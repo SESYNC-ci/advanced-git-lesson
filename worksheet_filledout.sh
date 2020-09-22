@@ -15,7 +15,7 @@ git push
 
 git branch -a
 
-git checkout master
+git checkout main
 
 git merge my-new-branch
 
@@ -40,11 +40,11 @@ git commit "Edit README.md"
 git push
 
 # Owner
-git checkout -b pr_branch master
+git checkout -b pr_branch main
 
-git pull https://github.com/(collaborator name)/(repo name).git master
+git pull https://github.com/(collaborator name)/(repo name).git main
 
-git checkout master
+git checkout main
 
 git merge pr_branch
 

@@ -11,7 +11,7 @@ These exercises will give you a chance to practice the advanced git techniques y
 - Create a local branch in your GitHub Pages repo (`yourname.github.io`).
 - Edit the `index.md` file to say something about yourself.
 - When you are satisfied, stage, commit, and push the change to the branch on the remote origin.
-- Merge the branch back into the master branch and push the master branch to the remote.
+- Merge the branch back into the main branch and push the main branch to the remote.
 - Take a look at your newly modified site!
 - If you like, delete the test branch locally and remotely.
 
@@ -52,12 +52,12 @@ git commit -m "Add content"
 git push -u origin (name of new branch)
 ```
 
-- Merge the branch into the master branch and push to the remote.
+- Merge the branch into the main branch and push to the remote.
 
 ```
-git checkout master
+git checkout main
 git merge (name of new branch)
-git push -u origin master
+git push -u origin main
 ```
 
 - Delete the now-merged branch on your local machine and remotely.

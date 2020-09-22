@@ -45,7 +45,7 @@ git push
 # Owner: pull the PR branch locally
 git checkout -b ...
 
-git ... https://github.com/... master
+git ... https://github.com/... main
 
 # Owner: merge the PR branch and cleanup
 git ...

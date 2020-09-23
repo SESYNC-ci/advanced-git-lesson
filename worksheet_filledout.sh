@@ -63,4 +63,4 @@ git push
 
 ### Project page
 git checkout -b gh-pages
-git pull origin gh-pages 
+git pull origin gh-pages --allow-unrelated-histories

@@ -11,7 +11,7 @@ These exercises will give you a chance to practice the advanced git techniques y
 - Create a local branch in your GitHub Pages repo (`yourname.github.io`).
 - Edit the `index.md` file to say something about yourself.
 - When you are satisfied, stage, commit, and push the change to the branch on the remote origin.
-- Merge the branch back into the master branch and push the master branch to the remote.
+- Merge the branch back into the main branch and push the main branch to the remote.
 - Take a look at your newly modified site!
 - If you like, delete the test branch locally and remotely.
 
@@ -52,12 +52,12 @@ git commit -m "Add content"
 git push -u origin (name of new branch)
 ```
 
-- Merge the branch into the master branch and push to the remote.
+- Merge the branch into the main branch and push to the remote.
 
 ```
-git checkout master
+git checkout main
 git merge (name of new branch)
-git push -u origin master
+git push -u origin main
 ```
 
 - Delete the now-merged branch on your local machine and remotely.
@@ -92,6 +92,7 @@ git push
 
 - Navigate to `https://github.com/(your username)/(name of repo)` and open the "Pull Requests" tab.
 - When prompted to select branches to compare (across forks), select your new branch and the Owner's `gh-pages` branch.
+- Create the pull request. The Owner should get a notification.
 
 **Owner**:
 
@@ -102,7 +103,7 @@ git checkout -b collab-pullrequest-branch
 git pull https://github.com/(collaborator name)/(repo name).git (name of pull request branch)
 ```
 
-- You will need to sign off on the merge commit message and quit Vim by typing `:wq` and pressing `Enter`.
+- You will need to sign off on the merge commit message and quit Vim by typing `:q` and pressing `Enter`.
 - Open and view `index.md`. If you want to add a commit to this, you can do so by having the Collaborator go to the
 page on github.com for their forked repo, open the "Settings" tab, click "Manage access", and invite you with 
 the proper permissions. Then you can edit the file and stage-commit-push as usual.
@@ -112,9 +113,9 @@ the proper permissions. Then you can edit the file and stage-commit-push as usua
 
 ```
 git checkout gh-pages
-git pull origin gh-pages
+git pull origin gh-pages --allow-unrelated-histories
 ```
 
-- Again you will need to sign off on the merge commit message and quit Vim by typing `:wq` and pressing `Enter`.
+- Again you will need to sign off on the merge commit message and quit Vim by typing `:q` and pressing `Enter`.
 - Delete the pull request branch locally using `git branch -D collab-pullrequest-branch`. 
 (The `-D` is needed to confirm that you are deleting an unmerged branch, because you merged it remotely not locally.)

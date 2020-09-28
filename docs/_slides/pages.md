@@ -177,12 +177,14 @@ Switched to a new branch 'gh-pages'
 
 Next, pull the `gh-pages` branch from the remote origin.
 
-<!-- change this to "allow unrelated histories" once git is updated on the rstudio server!!! -->
-
 ~~~bash
-git pull origin gh-pages
+git pull origin gh-pages --allow-unrelated-histories
 ~~~
 {:.text-document title="worksheet.sh"}
+
+The `--allow-unrelated-histories` option allows you to pull the pages branch, which was created
+with a fresh history not including the commit history from your main branch.
+{:.notes}
 
 ===
 

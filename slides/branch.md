@@ -19,11 +19,14 @@ the changes you made there.
 
 ===
 
-The primary branch, from which side branches are typically made, is called the **main** branch by default, 
-if the repo was created on GitHub after October 1, 2020. 
-In older repos or repos that you create locally with command-line git or the RStudio project interface,
-this branch is called **master**. This is a positive change, signaling that GitHub is committed to inclusion, 
+The primary branch, from which side branches are typically made, is called the `main` branch by default.
+
+This default applies if the repo was created on GitHub after October 1, 2020. 
+In older repos or repos that you create locally with the command-line git client or the RStudio project interface,
+this branch is called `master`. This is a positive change, signaling that GitHub is committed to inclusion, 
 but do be aware that it may cause conflicts depending on where you create your repos.
+Also be aware of this when reading documentation, tutorials, or StackOverflow posts written before 2020.
+{:.notes}
 
 ![]({% include asset.html path="images/atlassian_merge_before.png" %}){:width="50%" style="border: none; box-shadow: none;"}  
 *The main and feature branch have a common base but different tips (current states). [Image][using-branches] by Atlassian / [CC BY]*

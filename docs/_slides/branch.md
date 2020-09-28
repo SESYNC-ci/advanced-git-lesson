@@ -9,7 +9,7 @@ In the following images, circles represent successive commits through time, goin
 {:.notes}
 
 ![]({% include asset.html path="images/atlassian_branches.png" %}){:width="50%" style="border: none; box-shadow: none;"}  
-*Two branches created from the master branch, each with their own commit history. [Image][using-branches] by Atlassian / [CC BY]*
+*Two branches created from the main branch, each with their own commit history. [Image][using-branches] by Atlassian / [CC BY]*
 {:.captioned}
 
 The expectation is that you are going to make some changes to temporarily test things out, and then either merge the
@@ -19,28 +19,33 @@ the changes you made there.
 
 ===
 
-The primary branch, from which side branches are typically made, is called the **master** branch by default, although git and
-GitHub plan to change this name to "main" or "primary" in future versions. To avoid confusion we are still
-calling it the master branch in this lesson for now.
+The primary branch, from which side branches are typically made, is called the `main` branch by default.
+
+This default applies if the repo was created on GitHub after October 1, 2020. 
+In older repos or repos that you create locally with the command-line git client or the RStudio project interface,
+this branch is called `master`. This is a positive change, signaling that GitHub is committed to inclusion, 
+but do be aware that it may cause conflicts depending on where you create your repos.
+Also be aware of this when reading documentation, tutorials, or StackOverflow posts written before 2020.
+{:.notes}
 
 ![]({% include asset.html path="images/atlassian_merge_before.png" %}){:width="50%" style="border: none; box-shadow: none;"}  
-*The master and feature branch have a common base but different tips (current states). [Image][using-branches] by Atlassian / [CC BY]*
+*The main and feature branch have a common base but different tips (current states). [Image][using-branches] by Atlassian / [CC BY]*
 {:.captioned}
 
-*A clarifying note*: The distinction between, on the one hand, local versus remote (origin) and, on the other hand, the primary
-master branch versus other branches can be confusing at first. You can have multiple branches on both the
+*A clarifying note*: The distinction between, on the one hand, local versus remote (origin) and, on the other hand, 
+the main branch versus other branches can be confusing at first. You can have multiple branches on both the
 local and remote copies of the repository. The local and remote branches are not necessarily the same. 
 But if you want to push to, or pull from, the remote, the
-default will be the master branch unless you specify which branch you are pushing, or pulling.
+default will be the main branch unless you specify which branch you are pushing, or pulling.
 {:.notes}
 
 ===
 
-When you are finished working in a branch, you can merge the branch back into the master branch.
+When you are finished working in a branch, you can merge the branch back into the main branch.
 This will incorporate the work you've done into the "official" version of the repository.
 
 ![]({% include asset.html path="images/atlassian_merge_after.png" %}){:width="50%" style="border: none; box-shadow: none;"}  
-*A merge commit joins the feature branch back to the master branch. [Image][using-branches] by Atlassian / [CC BY]*
+*A merge commit joins the feature branch back to the main branch. [Image][using-branches] by Atlassian / [CC BY]*
 {:.captioned}
 
 ===
@@ -51,8 +56,8 @@ This will incorporate the work you've done into the "official" version of the re
 
 If several collaborators are working on code simultaneously, 
 each one can create their own branch, pushing commits as they work. 
-No merge conflicts would occur in the master branch during that time, saving the hassle of resolving many little
-conflicts one by one. When everyone is done, they merge their branches into the master branch and resolve everything at once.
+No merge conflicts would occur in the main branch during that time, saving the hassle of resolving many little
+conflicts one by one. When everyone is done, they merge their branches into the main branch and resolve everything at once.
 {:.notes}
 
 - **Making pull requests**
@@ -67,7 +72,7 @@ We will cover pull requests in depth later on in this lesson.
 For example, many R packages are downloadable directly from the GitHub repository. 
 Let's say the developer is testing out changes that she wants to push to GitHub so that other collaborators can see them. 
 In that situation, it is ideal to create a branch. If the branch is pushed to the remote, it
-will be accessible to other collaborators but not to people that download the master branch. 
+will be accessible to other collaborators but not to people that download the main branch. 
 It's also a good idea to use branches to test out changes to websites hosted on GitHub Pages before going live.
 {:.notes}
 
@@ -79,7 +84,7 @@ It's also a good idea to use branches to test out changes to websites hosted on 
 1. Switch to the new branch locally.
 1. Push the local branch to the remote repo.
 1. Make some changes, stage, commit, and push (repeat as needed).
-1. Merge the branch back into the master branch.
+1. Merge the branch back into the main branch.
 
 First, let's practice a basic branch workflow using the command line.
 
@@ -122,7 +127,7 @@ git checkout -b my-new-branch
 
 If there are already multiple branches, you can specify the branch from which you want to create your new branch: 
 `git checkout -b my-new-branch an-old-branch`. If you do not specify, the branch is created from the branch you are 
-currently in (which usually defaults to the `master` branch).
+currently in (which usually defaults to the `main` branch).
 {:.notes}
 
 ===
@@ -130,7 +135,7 @@ currently in (which usually defaults to the `master` branch).
 ### Push the local branch to the remote repo 
 
 We need to add the newly created branch to the origin (remote repo) so that changes we commit and push
-are pushed to that branch and not the master. Do this using `git push` with the `-u` option,
+are pushed to that branch and not `main`. Do this using `git push` with the `-u` option,
 which is short for `--set-upstream`. It makes sense to give the remote branch the same name as the 
 local branch.
 
@@ -172,10 +177,10 @@ git branch -a
 {:.text-document title="worksheet.sh"}
 
 ~~~bash
-  master
+  main
 * my-new-branch
-  remotes/origin/HEAD -> origin/master
-  remotes/origin/master
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
   remotes/origin/my-new-branch
 ~~~
 
@@ -190,20 +195,20 @@ view, create pull requests, or delete individual branches by clicking on "View a
 
 ===
 
-### Merge the branch into the master branch
+### Merge the branch into the main branch
 
-Once you're happy with the changes you've made, you can merge the branch into the master branch.
+Once you're happy with the changes you've made, you can merge the branch into `main`.
 
-First, switch back to the master branch on your local machine using `git checkout`.
+First, switch back to the main branch on your local machine using `git checkout`.
 
 ~~~bash
-git checkout master
+git checkout main
 ~~~
 {:.text-document title="worksheet.sh"}
 
 ===
 
-Next, merge your branch into the master branch with `git merge`:
+Next, merge your branch into the main branch with `git merge`:
 
 ~~~bash
 git merge my-new-branch
@@ -221,7 +226,7 @@ If there were any conflicts, you'd have to resolve them first.
 
 ===
 
-Now you can continue your work in the master branch. To avoid cluttering up the repo with lots of old branches, 
+Now you can continue your work in the main branch. To avoid cluttering up the repo with lots of old branches, 
 it's a good idea to delete old unused branches. Use the `-d` option on `git branch`:
 
 ~~~bash
@@ -251,9 +256,9 @@ git push origin --delete my-new-branch
  - [deleted]         my-new-branch
 ~~~
 
-*Note*: You can also merge newer changes from the master branch into a side branch. 
+*Note*: You can also merge newer changes from the main branch into a side branch. 
 Just do the opposite of the above `git checkout` and `git merge` steps: 
-first checkout the side branch and then `git merge master`.
+first checkout the side branch and then `git merge main`.
 {:.notes}
 
 ===

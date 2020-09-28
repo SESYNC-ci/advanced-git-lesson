@@ -87,8 +87,8 @@ Click on "New pull request."
 
 **Collaborator**: Specify that you want to "compare across forks." You are making a PR
 from your fork to the Owner's repo, rather than across branches within the same copy of the repo.
-Compare the `master` branch of your fork 
-with the `master` branch of the current repository, then click "Create pull request."
+Compare the `main` branch of your fork 
+with the `main` branch of the current repository, then click "Create pull request."
 
 ![pull request compare step]({% include asset.html path="images/pullrequest_compare.png" %})
 {:.captioned}
@@ -140,40 +140,40 @@ Switched to a new branch 'pr-branch'
 
 ===
 
-Pull the changes from the master branch of the Collaborator's forked version
+Pull the changes from the main branch of the Collaborator's forked version
 of the repo into the newly created branch.
 
 ~~~bash
-git pull https://github.com/(collaborator name)/(repo name).git master
+git pull https://github.com/(collaborator name)/(repo name).git main
 ~~~
 {:.text-document title="worksheet.sh"}
 
 ===
 
 After you have reviewed the code, accept the PR. There are two different ways to do this.
-You can either merge the PR into your master branch locally and then push to the remote,
-or you can merge the PR into your master branch on the remote repo on GitHub, and then pull
-the merged master branch locally.
+You can either merge the PR into your main branch locally and then push to the remote,
+or you can merge the PR into your main branch on the remote repo on GitHub, and then pull
+the merged main branch locally.
 
 In this example you will  merge the PR locally and push to the remote.
 
 ===
 
-**Owner**: Checkout your master branch again.
+**Owner**: Checkout your main branch again.
 
 ~~~bash
-git checkout master
+git checkout main
 ~~~
 {:.text-document title="worksheet.sh"}
 
 ~~~bash
-Switched to branch 'master'
-Your branch is up to date with 'origin/master'.
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
 ~~~
 
 ===
 
-Merge `pr-branch` into the `master` branch, then push to the remote.
+Merge `pr-branch` into the `main` branch, then push to the remote.
 
 ~~~bash
 git merge pr-branch
@@ -194,7 +194,7 @@ git push
 ===
 
 **Owner**: Go back to GitHub.com and view the PR page. You should see that the PR was automatically
-closed once you merged the changes into your master branch. It will be listed under the closed 
+closed once you merged the changes into your main branch. It will be listed under the closed 
 pull requests.
 
 ![pull request page]({% include asset.html path="images/closed_prs.PNG" %}){:width="60%"}
@@ -203,10 +203,10 @@ pull requests.
 ===
 
 The commits made by your collaborator, and any modifications you may have made on top of them, 
-are both part of the master branch of the repo. 
+are both part of the main branch of the repo. 
 
 An alternative to the above is to merge the pull request on GitHub.com (follow the point-and-click
-instructions), then `git pull` into your master branch locally to get the merged changes.
+instructions), then `git pull` into your main branch locally to get the merged changes.
 {:.notes}
 
 ===
@@ -224,17 +224,17 @@ git branch -d pr-branch
 
 ===
 
-**Collaborator**: Now that the owner has merged your PR with the master branch on his or her repo,
+**Collaborator**: Now that the owner has merged your PR with the main branch on his or her repo,
 you should receive an email notifying you that your PR was merged.
 
 ===
 
 Your repo should now be up to date with the Owner's. However, in the future, if you want
-to pull new changes from the master branch of the Owner's repo into your forked repo, you
+to pull new changes from the main branch of the Owner's repo into your forked repo, you
 need to specify that you are pulling from the Owner's repo in your call to `git pull`.
 
 ~~~bash
-git pull https://github.com/(name of owner)/(name of repo).git master
+git pull https://github.com/(name of owner)/(name of repo).git main
 ~~~
 
 You will be prompted to resolve merge conflicts if any exist.

@@ -160,9 +160,13 @@ future pushes can be done using only `git push`.
 
 Make some changes, stage, commit, and push.
 
+You can simply say `git push` and it will push to `my-new-branch` on the remote. (This is equivalent to saying `git push origin my-new-branch`.)
+{:.notes}
+
 ~~~bash
 git add /path/to/changed/file
 git commit -m "Commit message"
+git push
 ~~~
 {:.text-document title="worksheet.sh"}
 

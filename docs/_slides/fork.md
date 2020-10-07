@@ -39,9 +39,11 @@ Go to <https://github.com/yihui/fun> and fork the repo into your account.
 ===
 
 A few seconds later, you will have a copy of the repo in your account.
-
 Go back to your terminal to clone the forked repo to the home directory on your local machine.
-(Make sure you `cd` back to the directory where you want to clone the repo before cloning.)
+
+**Important**: Make sure you `cd` to the directory where you want to clone the repo before cloning.
+You don't want to have repo folders nested inside each other!
+{:.notes}
 
 ~~~bash
 git clone https://github.com/{{ site.data.lesson.example.user }}/fun.git

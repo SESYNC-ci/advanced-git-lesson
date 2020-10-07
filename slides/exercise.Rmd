@@ -73,7 +73,7 @@ git push origin --delete (name of new branch)
 
 - Navigate to `https://github.com/(username of owner)/(name of repo)` and select "Fork" in the upper right to fork the 
 repo into your own account.
-- Clone the repo by going to your terminal locally and executing `git clone https://github.com/(your username)/(name of repo).git`.
+- Clone the repo by going to your terminal locally and executing `git clone https://github.com/(your username)/(name of repo).git`. (As always, make sure you're cloning into the right place so you don't get nested repos.)
 - Create the branch, specifying that you are creating it from `gh-pages`, and set it up to track the remote.
 
 ```

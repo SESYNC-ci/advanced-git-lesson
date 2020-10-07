@@ -37,6 +37,9 @@ Initialize the created repo with a README.md to give the Collaborator something 
 
 If you haven't already, clone the repo locally, either with the command line or using the "New Project" dialog in RStudio.
 
+As before, make sure you `cd` to the right directory before cloning so you don't get nested repos!
+{:.notes}
+
 ~~~bash
 git clone https://github.com/(owner name)/(repo name).git
 ~~~

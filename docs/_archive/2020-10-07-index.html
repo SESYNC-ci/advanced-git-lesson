@@ -1,0 +1,1000 @@
+---
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Advanced git Techniques</title>
+<meta name="description" content="Learn advanced git techniques with GitHub and RStudio">
+<link rel="canonical"
+      href="https://SESYNC-ci.github.io/advanced-git-lesson/2020/10/07/index.html">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SESYNC-ci/lesson-style@3.0/docs/assets/css/default.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SESYNC-ci/lesson-style@3.0/docs/assets/css/syntax.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SESYNC-ci/lesson-style@3.0/docs/assets/css/static.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      rel="stylesheet"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous">
+
+    
+  </head>
+  <body>
+    <div class="page-content">
+      <div class="wrapper">
+        
+
+<h1 style="text-transform: none;" id="advanced-git-techniques">Advanced git Techniques</h1>
+
+<p>Lesson 9001 with <em>Quentin Read</em></p>
+
+<nav id="ToC">
+
+  <ul>
+    <li><a href="#/slides/intro">Lesson Objectives</a></li>
+    <li><a href="#/slides/branch">Branches</a></li>
+    <li><a href="#/slides/fork">Forks</a></li>
+    <li><a href="#/slides/pullrequest">Pull Requests</a></li>
+    <li><a href="#/slides/issue">GitHub Issues</a></li>
+    <li><a href="#/slides/pages">GitHub Pages</a></li>
+    <li><a href="#/slides/exercise">Exercises</a></li>
+  </ul>
+</nav>
+
+<hr />
+<p><a name="/slides/intro"></a></p>
+
+<h2 id="lesson-objectives">Lesson Objectives</h2>
+
+<ul>
+  <li>Build on the techniques learned in the basic git lesson with more advanced topics</li>
+  <li>Use git and GitHub to work with collaborators inside and outside your immediate research group</li>
+  <li>Publicize your work with GitHub Pages</li>
+</ul>
+
+<h2 id="specific-achievements">Specific Achievements</h2>
+
+<ul>
+  <li>Create, modify, and merge branches to reduce conflict within your project and with collaborators</li>
+  <li>Fork a repository to add your own contributions to someone else’s project</li>
+  <li>Make and accept pull requests for smooth and respectful collaboration</li>
+  <li>Use GitHub Issues to document and manage your work</li>
+  <li>Create and edit GitHub Pages for your user account and for one of your projects</li>
+</ul>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>You should be able to do the basic git actions described in the 
+<a href="https://cyberhelp.sesync.org/basic-git-lesson">Basic git Lesson</a> 
+or the <a href="https://cyberhelp.sesync.org/git-in-the-shell-lesson">Git in the Shell lesson</a>:
+set up a repo, stage changes, commit, push, and pull.</p>
+
+<h2 id="why-do-i-care">Why do I care?</h2>
+
+<p>The basic git lesson gives you most of what you need to work on your own or with occasional help from a collaborator. If you are
+interested in building your git skills to deal with more complicated workflows, this lesson is intended for you!</p>
+
+<p class="notes">Before you continue, it’s important to note that a lot of these procedures are more widely used for software development than
+for research purposes. In software (or website) development, you have to be very careful about making unnecessary changes that
+might “break” the code and render everything useless. 
+However, if you are doing exploratory statistical analysis or visualization,
+there is usually no harm in adding extra scripts to a repository or tacking on a few more lines to make another figure or data
+summary. Because individual data analysis scripts are usually fairly self-contained, even if you make mistakes, you rarely break other code in the project. 95% of what you need to do in the typical
+research workflow can be accomplished with stage, commit, push, pull, and the occasional resolving of a merge conflict.</p>
+
+<p class="notes">With all of that said, though, even if you rarely or never use some of these techniques, it is helpful just to be exposed to
+them and know the lingo. You may run across these terms being used and it is good to have some idea of what’s going on.</p>
+
+<p class="ToS"><a href="#/slides/intro">Top of Section</a></p>
+
+<hr />
+<p><a name="/slides/branch"></a></p>
+
+<h2 id="branches">Branches</h2>
+
+<p>A <em>branch</em> is a separate “version” of a repo with its own history — it is not a separate copy, it exists within the repo where it was created.</p>
+
+<p class="notes">In the following images, circles represent successive commits through time, going from left to right.</p>
+
+<p class="captioned"><img src="https://cdn.jsdelivr.net/gh/SESYNC-ci/advanced-git-lesson@v0.1/docs/assets/images/atlassian_branches.png" alt="" width="50%" style="border: none; box-shadow: none;" /><br />
+<em>Two branches created from the main branch, each with their own commit history. <a href="https://www.atlassian.com/git/tutorials/using-branches/">Image</a> by Atlassian / <a href="http://creativecommons.org/licenses/by/2.5/au/">CC BY</a></em></p>
+
+<p class="notes">The expectation is that you are going to make some changes to temporarily test things out, and then either merge the
+commits you made in the side branch back into the main branch, or delete/abandon the branch if you don’t want to incorporate
+the changes you made there.</p>
+
+<p>The primary branch, from which side branches are typically made, is called the <code class="language-plaintext highlighter-rouge">main</code> branch by default.</p>
+
+<p class="notes">This default applies if the repo was created on GitHub after October 1, 2020. 
+In older repos or repos that you create locally with the command-line git client or the RStudio project interface,
+this branch is called <code class="language-plaintext highlighter-rouge">master</code>. This is a positive change, signaling that GitHub is committed to inclusion, 
+but do be aware that it may cause conflicts depending on where you create your repos.
+Also be aware of this when reading documentation, tutorials, or StackOverflow posts written before 2020.</p>
+
+<p class="captioned"><img src="https://cdn.jsdelivr.net/gh/SESYNC-ci/advanced-git-lesson@v0.1/docs/assets/images/atlassian_merge_before.png" alt="" width="50%" style="border: none; box-shadow: none;" /><br />
+<em>The main and feature branch have a common base but different tips (current states). <a href="https://www.atlassian.com/git/tutorials/using-branches/">Image</a> by Atlassian / <a href="http://creativecommons.org/licenses/by/2.5/au/">CC BY</a></em></p>
+
+<p class="notes"><em>A clarifying note</em>: The distinction between, on the one hand, local versus remote (origin) and, on the other hand, 
+the main branch versus other branches can be confusing at first. You can have multiple branches on both the
+local and remote copies of the repository. The local and remote branches are not necessarily the same. 
+But if you want to push to, or pull from, the remote, the
+default will be the main branch unless you specify which branch you are pushing, or pulling.</p>
+
+<p>When you are finished working in a branch, you can merge the branch back into the main branch.
+This will incorporate the work you’ve done into the “official” version of the repository.</p>
+
+<p class="captioned"><img src="https://cdn.jsdelivr.net/gh/SESYNC-ci/advanced-git-lesson@v0.1/docs/assets/images/atlassian_merge_after.png" alt="" width="50%" style="border: none; box-shadow: none;" /><br />
+<em>A merge commit joins the feature branch back to the main branch. <a href="https://www.atlassian.com/git/tutorials/using-branches/">Image</a> by Atlassian / <a href="http://creativecommons.org/licenses/by/2.5/au/">CC BY</a></em></p>
+
+<h3 id="use-cases-for-branches">Use cases for branches</h3>
+
+<ul>
+  <li><strong>Making your collaborative workflow smoother</strong></li>
+</ul>
+
+<p class="notes">If several collaborators are working on code simultaneously, 
+each one can create their own branch, pushing commits as they work. 
+No merge conflicts would occur in the main branch during that time, saving the hassle of resolving many little
+conflicts one by one. When everyone is done, they merge their branches into the main branch and resolve everything at once.</p>
+
+<ul>
+  <li><strong>Making pull requests</strong></li>
+</ul>
+
+<p class="notes">Suggesting a change to someone else’s repo, whether it’s your collaborator’s repo or someone else’s, 
+requires you to create a branch and make a <em>pull request</em> from that branch. 
+We will cover pull requests in depth later on in this lesson.</p>
+
+<ul>
+  <li><strong>Testing code in software and web development</strong></li>
+</ul>
+
+<p class="notes">For example, many R packages are downloadable directly from the GitHub repository. 
+Let’s say the developer is testing out changes that she wants to push to GitHub so that other collaborators can see them. 
+In that situation, it is ideal to create a branch. If the branch is pushed to the remote, it
+will be accessible to other collaborators but not to people that download the main branch. 
+It’s also a good idea to use branches to test out changes to websites hosted on GitHub Pages before going live.</p>
+
+<h3 id="branch-workflow">Branch workflow</h3>
+
+<ol>
+  <li>Create a new branch locally</li>
+  <li>Switch to the new branch locally.</li>
+  <li>Push the local branch to the remote repo.</li>
+  <li>Make some changes, stage, commit, and push (repeat as needed).</li>
+  <li>Merge the branch back into the main branch.</li>
+</ol>
+
+<p>First, let’s practice a basic branch workflow using the command line.</p>
+
+<h3 id="create-branch-locally">Create branch locally</h3>
+
+<p>You can create a branch from the terminal or point-and-click-style in RStudio. We’ll start by using the terminal.</p>
+
+<p>Create a new branch in your local repo with the <code class="language-plaintext highlighter-rouge">git branch</code> command.
+Give it a name with only letters, numbers, and hyphens (no spaces, because it will be part of a URL).</p>
+
+<div class="language-bash text-document highlighter-rouge" title="worksheet-9001.sh"><div class="highlight"><pre class="highlight"><code>git branch my-new-branch
+</code></pre></div></div>
+
+<h3 id="switch-to-the-branch">Switch to the branch</h3>
+
+<p>Use <code class="language-plaintext highlighter-rouge">git checkout</code> to “check out”, or switch to, the newly created branch.</p>
+
+<div class="language-bash text-document highlighter-rouge" title="worksheet-9001.sh"><div class="highlight"><pre class="highlight"><code>git checkout my-new-branch
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switched to branch <span class="s1">'my-new-branch'</span>
+</code></pre></div></div>
+
+<p>Alternatively, as a shortcut, you can simultaneously create and switch to a new branch this way:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout <span class="nt">-b</span> my-new-branch
+</code></pre></div></div>
+
+<p class="notes">If there are already multiple branches, you can specify the branch from which you want to create your new branch: 
+<code class="language-plaintext highlighter-rouge">git checkout -b my-new-branch an-old-branch</code>. If you do not specify, the branch is created from the branch you are 
+currently in (which usually defaults to the <code class="language-plaintext highlighter-rouge">main</code> branch).</p>
+
+<h3 id="push-the-local-branch-to-the-remote-repo">Push the local branch to the remote repo</h3>
+
+<p>We need to add the newly created branch to the origin (remote repo) so that changes we commit and push
+are pushed to that branch and not <code class="language-plaintext highlighter-rouge">main</code>. Do this using <code class="language-plaintext highlighter-rouge">git push</code> with the <code class="language-plaintext highlighter-rouge">-u</code> option,
+which is short for <code class="language-plaintext highlighter-rouge">--set-upstream</code>. It makes sense to give the remote branch the same name as the 
+local branch.</p>
+
+<div class="language-bash text-document highlighter-rouge" title="worksheet-9001.sh"><div class="highlight"><pre class="highlight"><code>git push <span class="nt">-u</span> origin my-new-branch
+</code></pre></div></div>
+
+<p>You will see this at the bottom of the output:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">*</span> <span class="o">[</span>new branch]      my-new-branch -&gt; my-new-branch
+Branch my-new-branch <span class="nb">set </span>up to track remote branch my-new-branch from origin.
+</code></pre></div></div>
+
+<p>Now that the local branch is set up to track the remote branch with the same name,
+future pushes can be done using only <code class="language-plaintext highlighter-rouge">git push</code>.</p>
+
+<p>Make some changes, stage, commit, and push.</p>
+
+<p class="notes">You can simply say <code class="language-plaintext highlighter-rouge">git push</code> and it will push to <code class="language-plaintext highlighter-rouge">my-new-branch</code> on the remote. (This is equivalent to saying <code class="language-plaintext highlighter-rouge">git push origin my-new-branch</code>.)</p>
+
+<div class="language-bash text-document highlighter-rouge" title="worksheet-9001.sh"><div class="highlight"><pre class="highlight"><code>git add /path/to/changed/file
+git commit <span class="nt">-m</span> <span class="s2">"Commit message"</span>
+git push
+</code></pre></div></div>
+
+<p>You can view all branches, both local and remote, with the <code class="language-plaintext highlighter-rouge">-a</code> option of <code class="language-plaintext highlighter-rouge">git branch</code>.
+The asterisk indicates the branch you are in locally.</p>
+
+<div class="language-bash text-document highlighter-rouge" title="worksheet-9001.sh"><div class="highlight"><pre class="highlight"><code>git branch <span class="nt">-a</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  main
+<span class="k">*</span> my-new-branch
+  remotes/origin/HEAD -&gt; origin/main
+  remotes/origin/main
+  remotes/origin/my-new-branch
+</code></pre></div></div>
+
+<p>You can also view the branches on GitHub. Switch between them with the dropdown menu or 
+view, create pull requests, or delete individual branches by clicking on “View all branches.”</p>
+
+<p class="captioned"><img src="https://cdn.jsdelivr.net/gh/SESYNC-ci/advanced-git-lesson@v0.1/docs/assets/images/github_branch_dropdown.PNG" alt="github branches dropdown" width="50%" style="border: none; box-shadow: none;" /></p>
+
+<h3 id="merge-the-branch-into-the-main-branch">Merge the branch into the main branch</h3>
+
+<p>Once you’re happy with the changes you’ve made, you can merge the branch into <code class="language-plaintext highlighter-rouge">main</code>.</p>
+
+<p>First, switch back to the main branch on your local machine using <code class="language-plaintext highlighter-rouge">git checkout</code>.</p>
+
+<div class="language-bash text-document highlighter-rouge" title="worksheet-9001.sh"><div class="highlight"><pre class="highlight"><code>git checkout main
+</code></pre></div></div>
+
+<p>Next, merge your branch into the main branch with <code class="language-plaintext highlighter-rouge">git merge</code>:</p>
+
+<div class="language-bash text-document highlighter-rouge" title="worksheet-9001.sh"><div class="highlight"><pre class="highlight"><code>git merge my-new-branch
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Fast-forward
+ README.md | 4 ++++
+ 1 file changed, 4 insertions<span class="o">(</span>+<span class="o">)</span>
+</code></pre></div></div>
+
+<p>This will do a “fast-forward,” meaning that we skip the merging step because there are no conflicts between the two branches.
+If there were any conflicts, you’d have to resolve them first.</p>
+
+<p>Now you can continue your work in the main branch. To avoid cluttering up the repo with lots of old branches, 
+it’s a good idea to delete old unused branches. Use the <code class="language-plaintext highlighter-rouge">-d</code> option on <code class="language-plaintext highlighter-rouge">git branch</code>:</p>
+
+<div class="language-bash text-document highlighter-rouge" title="worksheet-9001.sh"><div class="highlight"><pre class="highlight"><code>git branch <span class="nt">-d</span> my-new-branch
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Deleted branch my-new-branch <span class="o">(</span>was f06a00c<span class="o">)</span>
+</code></pre></div></div>
+
+<p class="notes">Sometimes you will get a warning if the branch you are deleting has not been fully merged.
+You can override this warning and delete an unmerged branch by replacing the <code class="language-plaintext highlighter-rouge">-d</code> with <code class="language-plaintext highlighter-rouge">-D</code>,
+as in <code class="language-plaintext highlighter-rouge">git branch -D my-new-branch</code>.</p>
+
+<p>The branch still exists on the remote repo on GitHub. You can delete it on the website or from the terminal:</p>
+
+<div class="language-bash text-document highlighter-rouge" title="worksheet-9001.sh"><div class="highlight"><pre class="highlight"><code>git push origin <span class="nt">--delete</span> my-new-branch
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> - <span class="o">[</span>deleted]         my-new-branch
+</code></pre></div></div>
+
+<p class="notes"><em>Note</em>: You can also merge newer changes from the main branch into a side branch. 
+Just do the opposite of the above <code class="language-plaintext highlighter-rouge">git checkout</code> and <code class="language-plaintext highlighter-rouge">git merge</code> steps: 
+first checkout the side branch and then <code class="language-plaintext highlighter-rouge">git merge main</code>.</p>
+
+<h3 id="point-and-click-branching-in-rstudio">Point-and-click branching in RStudio</h3>
+
+<p>If it’s more your style you can use RStudio’s GUI for basic branching actions.</p>
+
+<p>Create the branch by clicking “New Branch” on the Git tab in the upper right-hand corner.</p>
+
+<p class="captioned"><img src="https://cdn.jsdelivr.net/gh/SESYNC-ci/advanced-git-lesson@v0.1/docs/assets/images/rstudio_git_tab_newbranch.PNG" alt="new branch in git tab" /></p>
+
+<p>In the dialog box that appears, enter the new branch name and select the option to 
+sync with origin.</p>
+
+<p class="captioned"><img src="https://cdn.jsdelivr.net/gh/SESYNC-ci/advanced-git-lesson@v0.1/docs/assets/images/rstudio_newbranch_dialogbox.PNG" alt="new branch dialog box" /></p>
+
+<p>This will simultaneously create the branch, switch to the branch, and set up the local branch to track a remote branch!</p>
+
+<p class="captioned"><img src="https://cdn.jsdelivr.net/gh/SESYNC-ci/advanced-git-lesson@v0.1/docs/assets/images/rstudio_newbranch_created.PNG" alt="new branch creation message" /></p>
+
+<p>You can switch among branches with the dropdown menu in the Git tab.</p>
+
+<p class="captioned"><img src="https://cdn.jsdelivr.net/gh/SESYNC-ci/advanced-git-lesson@v0.1/docs/assets/images/rstudio_branch_dropdown.PNG" alt="branches dropdown menu" /></p>
+
+<p>Unfortunately it’s not possible to merge branches with the point-and-click interface so you are stuck with 
+the command line when it’s time to <code class="language-plaintext highlighter-rouge">git merge my-new-branch</code>!
+(This illustrates that the GUI is really only suitable for simple git actions.)</p>
+
+<p class="ToS"><a href="#/slides/branch">Top of Section</a></p>
+
+<hr />
+<p><a name="/slides/fork"></a></p>
+
+<h2 id="forks">Forks</h2>
+
+<p class="captioned"><img src="https://cdn.jsdelivr.net/gh/SESYNC-ci/advanced-git-lesson@v0.1/docs/assets/images/forky.jpeg" alt="forky" width="30%" style="border: none; box-shadow: none;" /></p>
+
+<p>To <em>fork</em> a repo is to copy a repo from someone else’s account into your account so that you can start your own project
+based on the existing repo, without having to push changes to the original owner’s repo. In git jargon, a fork is just a “clone with a different remote origin.”</p>
+
+<p class="notes">If you fork a repo, it is probably going to be one where you aren’t collaborating directly with its creator. The creator may
+continue to make updates, adding commits to their version’s history, while you do the same. A good example would be if you are
+making a GitHub Page, and you want to use a premade template. You would fork the page template repo and add your own content;
+you would likely never push changes to the template itself.</p>
+
+<p class="notes">However, if you are working on a project that you forked from someone else’s repo, and you do
+want them to incorporate your changes into their version of the repo, you would make a 
+<em>pull request</em>, which we will cover later in this lesson.</p>
+
+<h3 id="forking-a-repo">Forking a repo</h3>
+
+<p>To fork a repo on GitHub, just go to the repo page and click “Fork” in the upper right-hand corner.</p>
+
+<p class="captioned"><img src="https://cdn.jsdelivr.net/gh/SESYNC-ci/advanced-git-lesson@v0.1/docs/assets/images/github_fork_fun.PNG" alt="fork fun repo" width="50%" style="border: none; box-shadow: none;" /></p>
+
+<p>In this example we will fork the <a href="" class="rlib">fun</a> R package, originally developed by Yihui Xie. 
+Go to <a href="https://github.com/yihui/fun">https://github.com/yihui/fun</a> and fork the repo into your account.</p>
+
+<p>A few seconds later, you will have a copy of the repo in your account.
+Go back to your terminal to clone the forked repo to the home directory on your local machine.</p>
+
+<p class="notes"><strong>Important</strong>: Make sure you <code class="language-plaintext highlighter-rouge">cd</code> to the directory where you want to clone the repo before cloning.
+You don’t want to have repo folders nested inside each other!</p>
+
+<div class="language-bash text-document highlighter-rouge" title="worksheet-9001.sh"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/jdoe/fun.git
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Cloning into <span class="s1">'fun'</span>...
+</code></pre></div></div>
+
+<p>In RStudio, an alternative to the command above is to
+clone the repo into a new RStudio project by going to 
+<code class="language-plaintext highlighter-rouge">File &gt; New Project &gt; Version Control</code> and entering the repo URL.</p>
+
+<p class="notes">This will integrate version control with RStudio’s project structure.
+If there are no <code class="language-plaintext highlighter-rouge">.Rproj</code> or <code class="language-plaintext highlighter-rouge">.gitignore</code> files in the repo you are cloning, this will create them.</p>
+
+<p class="captioned"><img src="https://cdn.jsdelivr.net/gh/SESYNC-ci/advanced-git-lesson@v0.1/docs/assets/images/threesteps_newproj.png" alt="RStudio three steps to create project" />
+<em>These are the three steps to follow to clone the project with RStudio’s dialog.</em></p>
+
+<p class="notes">Now, when you commit and push changes to this repo, they will be pushed to the copy you
+own rather than the owner’s original copy. You probably do <em>not</em> want this behavior
+if you are directly working with a collaborator on the same project.
+In that case, you would just want to clone (not fork) the repo and 
+keep the same remote origin as the collaborator.</p>
+
+<p class="ToS"><a href="#/slides/fork">Top of Section</a></p>
+
+<hr />
+<p><a name="/slides/pullrequest"></a></p>
+
+<h2 id="pull-requests">Pull Requests</h2>
+
+<p>A <strong>pull request</strong> (PR for short) is just that: a <em>request</em> that the owner of a repo 
+<em>pull</em> your changes, incorporating them into his or her repo.</p>
+
+<p class="notes">You can make a pull request to any public repo on GitHub, even if you don’t have push access to the repo. 
+In contrast, if you are a collaborator on a repo who has write access, you can push commits without making pull requests. However, it is often a good idea to make a pull request anyway, instead of pushing directly. This is a more respectful way
+to contribute to a project because it gives the repo owner a chance to review your changes and approve them.</p>
+
+<p>For this part of the lesson, there are two roles, the <strong>Owner</strong> and <strong>Collaborator</strong>. Find a partner, 
+and go through this exercise twice, each time taking a different role.</p>
+
+<p>The <strong>Collaborator</strong> will make the PR and the <strong>Owner</strong> will modify, then accept it.</p>
+
+<p><strong>Owner</strong>: For this exercise, feel free to let the Collaborator fork one of your existing repos.
+If you don’t have a repo you own to practice on, quickly create one on GitHub.com.</p>
+
+<p>Make sure it is a public repo so that the Collaborator can clone it. However, you do not need to 
+give the Collaborator push access.</p>
+
+<p>Initialize the created repo with a README.md to give the Collaborator something to work with.</p>
+
+<p class="captioned"><img src="https://cdn.jsdelivr.net/gh/SESYNC-ci/advanced-git-lesson@v0.1/docs/assets/images/create_new_repo_for_pr.PNG" alt="initialize repo dialog box" width="60%" /></p>
+
+<p>If you haven’t already, clone the repo locally, either with the command line or using the “New Project” dialog in RStudio.</p>
+
+<p class="notes">As before, make sure you <code class="language-plaintext highlighter-rouge">cd</code> to the right directory before cloning so you don’t get nested repos!</p>
+
+<div class="language-bash text-document highlighter-rouge" title="worksheet-9001.sh"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/<span class="o">(</span>owner name<span class="o">)</span>/<span class="o">(</span>repo name<span class="o">)</span>.git
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Cloning into <span class="s1">'repo name'</span>...
+</code></pre></div></div>
+
+<p><strong>Collaborator</strong>: Fork the Owner’s repo (on GitHub.com) and then clone it locally.</p>
+
+<p>As before, you can either do this from the command line with the command below, or with the “New project” dialog.</p>
+
+<div class="language-bash text-document highlighter-rouge" title="worksheet-9001.sh"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/<span class="o">(</span>collaborator name<span class="o">)</span>/<span class="o">(</span>repo name<span class="o">)</span>.git
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Cloning into <span class="s1">'repo name'</span>...
+</code></pre></div></div>
+
+<p>Now make a change to the README.md. Stage, commit, and push.</p>
+
+<div class="language-bash text-document highlighter-rouge" title="worksheet-9001.sh"><div class="highlight"><pre class="highlight"><code>git add README.md
+git commit <span class="s2">"Edit README.md"</span>
+git push
+</code></pre></div></div>
+
+<p>The change you’ve pushed is now part of your forked copy of the repo, but is not
+yet incorporated into the Owner’s repo. Time to make a pull request.</p>
+
+<p><strong>Collaborator</strong>: Go to the “Pull Requests” tab in the Owner’s repository. You should see something like this.
+Click on “New pull request.”</p>
+
+<p class="captioned"><img src="https://cdn.jsdelivr.net/gh/SESYNC-ci/advanced-git-lesson@v0.1/docs/assets/images/pullrequest_forkedrepo.png" alt="pull request page" /></p>
+
+<p><strong>Collaborator</strong>: Specify that you want to “compare across forks.” You are making a PR
+from your fork to the Owner’s repo, rather than across branches within the same copy of the repo.
+Compare the <code class="language-plaintext highlighter-rouge">main</code> branch of your fork 
+with the <code class="language-plaintext highlighter-rouge">main</code> branch of the current repository, then click “Create pull request.”</p>
+
+<p class="captioned"><img src="https://cdn.jsdelivr.net/gh/SESYNC-ci/advanced-git-lesson@v0.1/docs/assets/images/pullrequest_compare.png" alt="pull request compare step" /></p>
+
+<p>That’s it, you’ve just made a pull request!</p>
+
+<p>You have made a request for the <strong>Owner</strong> of the repo to review the commits you’ve made to the code, 
+in the hope that he or she will accept the request and add your changes to the primary official version of the repo.</p>
+
+<p><strong>Owner</strong>: As the owner, you will receive an email saying that someone has made a pull request on your repo.</p>
+
+<p class="notes">By default you are “watching” any repo you create, meaning you will receive emails for new pull requests and new issues.
+You can disable this by selecting “Unwatch” in the upper right of the repo page on GitHub.</p>
+
+<p>When you receive a pull request, you can do one of the following:</p>
+
+<ul>
+  <li>Accept the pull request as is</li>
+  <li>Make additional changes to the pull request and then accept</li>
+  <li>Decline the pull request</li>
+</ul>
+
+<p>In this example, we will simulate accepting the pull request without any additional modifications.</p>
+
+<p><strong>Owner</strong>: Even though the PR page shows that there are no conflicts, it is good practice to review the 
+code before accepting and merging the PR. To do this, you need to create a new branch locally for 
+the PR, and then pull the Collaborator’s changes into that local branch.</p>
+
+<p>We will follow the command line instructions that GitHub helpfully provides.
+First create a new branch locally and switch to it.</p>
+
+<div class="language-bash text-document highlighter-rouge" title="worksheet-9001.sh"><div class="highlight"><pre class="highlight"><code>git checkout <span class="nt">-b</span> pr-branch
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switched to a new branch <span class="s1">'pr-branch'</span>
+</code></pre></div></div>
+
+<p>Pull the changes from the main branch of the Collaborator’s forked version
+of the repo into the newly created branch.</p>
+
+<div class="language-bash text-document highlighter-rouge" title="worksheet-9001.sh"><div class="highlight"><pre class="highlight"><code>git pull https://github.com/<span class="o">(</span>collaborator name<span class="o">)</span>/<span class="o">(</span>repo name<span class="o">)</span>.git main
+</code></pre></div></div>
+
+<p>After you have reviewed the code, accept the PR. There are two different ways to do this.
+You can either merge the PR into your main branch locally and then push to the remote,
+or you can merge the PR into your main branch on the remote repo on GitHub, and then pull
+the merged main branch locally.</p>
+
+<p>In this example you will  merge the PR locally and push to the remote.</p>
+
+<p><strong>Owner</strong>: Checkout your main branch again.</p>
+
+<div class="language-bash text-document highlighter-rouge" title="worksheet-9001.sh"><div class="highlight"><pre class="highlight"><code>git checkout main
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switched to branch <span class="s1">'main'</span>
+Your branch is up to <span class="nb">date </span>with <span class="s1">'origin/main'</span><span class="nb">.</span>
+</code></pre></div></div>
+
+<p>Merge <code class="language-plaintext highlighter-rouge">pr-branch</code> into the <code class="language-plaintext highlighter-rouge">main</code> branch, then push to the remote.</p>
+
+<div class="language-bash text-document highlighter-rouge" title="worksheet-9001.sh"><div class="highlight"><pre class="highlight"><code>git merge pr-branch
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Fast-forward
+ README.md | 2 ++
+ 1 file changed, 2 insertions<span class="o">(</span>+<span class="o">)</span>
+</code></pre></div></div>
+
+<div class="language-bash text-document highlighter-rouge" title="worksheet-9001.sh"><div class="highlight"><pre class="highlight"><code>git push
+</code></pre></div></div>
+
+<p><strong>Owner</strong>: Go back to GitHub.com and view the PR page. You should see that the PR was automatically
+closed once you merged the changes into your main branch. It will be listed under the closed 
+pull requests.</p>
+
+<p class="captioned"><img src="https://cdn.jsdelivr.net/gh/SESYNC-ci/advanced-git-lesson@v0.1/docs/assets/images/closed_prs.PNG" alt="pull request page" width="60%" /></p>
+
+<p>The commits made by your collaborator, and any modifications you may have made on top of them, 
+are both part of the main branch of the repo.</p>
+
+<p class="notes">An alternative to the above is to merge the pull request on GitHub.com (follow the point-and-click
+instructions), then <code class="language-plaintext highlighter-rouge">git pull</code> into your main branch locally to get the merged changes.</p>
+
+<p>You can delete the PR branch locally if you like:</p>
+
+<div class="language-bash text-document highlighter-rouge" title="worksheet-9001.sh"><div class="highlight"><pre class="highlight"><code>git branch <span class="nt">-d</span> pr-branch
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> - <span class="o">[</span>deleted]         pr-branch
+</code></pre></div></div>
+
+<p><strong>Collaborator</strong>: Now that the owner has merged your PR with the main branch on his or her repo,
+you should receive an email notifying you that your PR was merged.</p>
+
+<p>Your repo should now be up to date with the Owner’s. However, in the future, if you want
+to pull new changes from the main branch of the Owner’s repo into your forked repo, you
+need to specify that you are pulling from the Owner’s repo in your call to <code class="language-plaintext highlighter-rouge">git pull</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull https://github.com/<span class="o">(</span>name of owner<span class="o">)</span>/<span class="o">(</span>name of repo<span class="o">)</span>.git main
+</code></pre></div></div>
+
+<p>You will be prompted to resolve merge conflicts if any exist.</p>
+
+<p>Halftime! Switch sides!</p>
+
+<p>Trade places with your partner and repeat the exercise.</p>
+
+<p class="ToS"><a href="#/slides/pullrequest">Top of Section</a></p>
+
+<hr />
+<p><a name="/slides/issue"></a></p>
+
+<h2 id="github-issues">GitHub Issues</h2>
+
+<p>Issues are a useful feature of GitHub.com that can greatly improve your workflow. 
+The user interface is fairly easy to figure out. 
+This is just a plug to encourage everyone to make them a part of their workflow!</p>
+
+<h3 id="uses-for-issues">Uses for Issues</h3>
+
+<ul>
+  <li>Pointing out a bug or feature request in someone else’s repository</li>
+  <li>Making a to-do list for yourself</li>
+  <li>Managing projects by assigning tasks to collaborators</li>
+  <li>Maintaining a record of rich information about your work</li>
+  <li>Troubleshooting problems with code by searching existing issues</li>
+</ul>
+
+<p class="captioned"><img src="https://cdn.jsdelivr.net/gh/SESYNC-ci/advanced-git-lesson@v0.1/docs/assets/images/rslurm_issue_queue.PNG" alt="" width="75%" style="border: none; box-shadow: none;" /><br />
+<em>Example: rslurm’s issue queue contains issues created by both collaborators and users</em></p>
+
+<h3 id="formatting-issues">Formatting issues</h3>
+
+<p>You can reference users, commits, pull requests, and other issues in the text of your issue, and they will automatically be linked.</p>
+
+<p>To reference users, use the <code class="language-plaintext highlighter-rouge">@</code> sign followed by their name.</p>
+
+<p>To reference commits, use the first 7 digits of the commit’s hash (it will look something like <code class="language-plaintext highlighter-rouge">5d1001b</code>).</p>
+
+<p>To reference pull requests and other issues, use the <code class="language-plaintext highlighter-rouge">#</code> sign followed by the number ID of the pull request or issue. They go up sequentially starting at <code class="language-plaintext highlighter-rouge">#1</code>.</p>
+
+<p class="captioned"><img src="https://cdn.jsdelivr.net/gh/SESYNC-ci/advanced-git-lesson@v0.1/docs/assets/images/rslurm_issue_example.png" alt="" width="75%" style="border: none; box-shadow: none;" /><br />
+<em>Example: comments on an issue in rslurm referencing users and a pull request</em></p>
+
+<h3 id="issue-labels-and-assignees">Issue labels and assignees</h3>
+
+<p>You can put labels on issues to tag them by topic.</p>
+
+<p>You can also assign issues to collaborators on your project, to designate who is responsible for resolving the issue.</p>
+
+<p class="captioned"><img src="https://cdn.jsdelivr.net/gh/SESYNC-ci/advanced-git-lesson@v0.1/docs/assets/images/issue_assignees.png" alt="" width="75%" style="border: none; box-shadow: none;" /><br />
+<em>Example: issues assigned to different collaborators</em></p>
+
+<h3 id="closing-resolved-issues">Closing resolved issues</h3>
+
+<p>Once an issue is resolved, you can close it. It will no longer appear as an outstanding issue, but all 
+closed issues are still archived as part of the repo on GitHub.</p>
+
+<h3 id="troubleshooting-with-issues">Troubleshooting with issues</h3>
+
+<p>If you run into an issue with an R package or other software, it is often helpful to go to the 
+repo page for that software and search the (open and closed) issues there. This can be a more
+targeted way to find a solution for your problem, compared to searching Google or StackOverflow.</p>
+
+<h3 id="learn-more">Learn more!</h3>
+
+<p>Read <a href="https://guides.github.com/features/issues/">GitHub’s guide to issues</a> to learn more about how
+to use issues for project management.</p>
+
+<p class="notes"><em>A final note on issues</em>: Issues are a feature of GitHub only, not git. So if you clone a repo from GitHub to somewhere
+else such as GitLab, the issues will not automatically be copied over. You will need to 
+<a href="https://docs.gitlab.com/ee/user/project/import/github.html">import</a> the repo to get the history of
+issues, pull requests, and comments.</p>
+
+<p class="ToS"><a href="#/slides/issue">Top of Section</a></p>
+
+<hr />
+<p><a name="/slides/pages"></a></p>
+
+<h2 id="github-pages">GitHub Pages</h2>
+
+<p>GitHub provides free* web hosting through GitHub Pages. You can create a site associated with your user account 
+(<code class="language-plaintext highlighter-rouge">jdoe.github.io</code>) or a page for any of your repos 
+(<code class="language-plaintext highlighter-rouge">jdoe.github.io/mycoolproject</code>).</p>
+
+<p>* <em>Because GitHub is owned by Microsoft it is not guaranteed that any of the services they provide will be free forever. It is for now.</em></p>
+
+<h3 id="how-does-it-work">How does it work?</h3>
+
+<p>When you designate a repo as a page, GitHub will build the Markdown (<code class="language-plaintext highlighter-rouge">.md</code>) files in the repo into
+HTML files, creating a complete static site, using software called <a href="https://jekyllrb.com/">Jekyll</a>.</p>
+
+<p>Note that you can also create the HTML pages yourself, either by using RStudio to knit your
+Markdown or RMarkdown files to HTML, or manually.</p>
+
+<p class="notes">There are many ways to customize the layout and theme of your page. This lesson does not go into
+much detail about that. The first place to look for more information is 
+<a href="https://docs.github.com/en/github/working-with-github-pages">the official GitHub Pages documentation</a>. 
+We have also compiled <a href="https://cyberhelp.sesync.org/blog/github-pages-resources.html">a list of resources, tutorials, and templates</a>.</p>
+
+<p class="notes">The <a href="https://github.com/mmistakes/minimal-mistakes">Minimal Mistakes theme</a> is one of the most widely used free templates. 
+You can fork the Minimal Mistakes repo into your account and add your content to it.
+<a href="https://github.com/academicpages/academicpages.github.io">Academic Pages</a> is a modified version of Minimal Mistakes 
+that is designed for academics.
+If you use either of these templates, consider donating to the developer on PayPal.</p>
+
+<p class="notes">All the <a href="https://cyberhelp.sesync.org/lesson/">SESYNC cyberhelp lesson pages</a> were created with GitHub Pages, 
+including this one! 
+The <a href="https://r-spatial.github.io/sf/">homepage of the popular R package sf</a> is also a GitHub Page,
+as are <a href="https://tinystats.github.io/teacups-giraffes-and-statistics/index.html">this collection of R stats tutorials</a>
+and many academic pages including <a href="http://nelson.rbind.io/">this lab website</a>.</p>
+
+<h3 id="creating-a-personal-site">Creating a personal site</h3>
+
+<p>In this example, we will create a page associated with your user account.</p>
+
+<p>Create a new repo on GitHub.com. In order for GitHub to recognize that this repo is your personal site, 
+you need to name it <code class="language-plaintext highlighter-rouge">(your username).github.io</code>.</p>
+
+<p>Next, go to the <strong>Settings</strong> page of your repo and scroll down to the
+<strong>GitHub Pages</strong> section.</p>
+
+<p class="captioned"><img src="https://cdn.jsdelivr.net/gh/SESYNC-ci/advanced-git-lesson@v0.1/docs/assets/images/gh_pages_settings.PNG" alt="github pages settings" /></p>
+
+<p>Choose a pre-made Jekyll theme for your personal site.</p>
+
+<p>Your site is now being built at <code class="language-plaintext highlighter-rouge">(your username).github.io</code>! The first time will take a few 
+minutes but subsequent pushes will appear on the site after only a few seconds.</p>
+
+<p>You will be redirected to an editor window where you can modify the homepage (<code class="language-plaintext highlighter-rouge">index.md</code>).
+This is a Markdown file that Jekyll will render into HTML to become the homepage for your project.
+Of course, it is better practice not to edit files on the web; we need to clone the
+repo locally and edit the files there.</p>
+
+<p>Clone the repo locally, either using the command below or by creating an RStudio project.
+Again, if you are cloning using the command line, make sure you are in the correct directory first.</p>
+
+<div class="language-bash text-document highlighter-rouge" title="worksheet-9001.sh"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/jdoe/jdoe.github.io
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Cloning into <span class="s1">'jdoe.github.io'</span>...
+</code></pre></div></div>
+
+<p>The repo contains the bare bones of what Jekyll needs to build the site:
+a YAML configuration file called <code class="language-plaintext highlighter-rouge">_config.yml</code> and a homepage called <code class="language-plaintext highlighter-rouge">index.md</code>.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">_config.yml</code> file currently contains only a single line, specifying the site theme.
+The leading underscore <code class="language-plaintext highlighter-rouge">_</code> of the filename tells Jekyll not to process the file as a page.</p>
+
+<p>Let’s add a title to the configuration file.
+There is a <a href="https://jekyllrb.com/docs/variables/">Jekyll documentation page</a> listing
+the site-level variables you can include in the configuration file.</p>
+
+<p>Open <code class="language-plaintext highlighter-rouge">_config.yml</code> and add a line with your site title in quotes:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>title: <span class="s2">"My Site"</span>
+</code></pre></div></div>
+
+<p>Stage, commit, and push.</p>
+
+<div class="language-bash text-document highlighter-rouge" title="worksheet-9001.sh"><div class="highlight"><pre class="highlight"><code>git add _config.yml
+git commit <span class="nt">-m</span> <span class="s2">"Add site title to config"</span>
+git push
+</code></pre></div></div>
+
+<p>The site will be rebuilt by Jekyll and you should see the new title shortly.</p>
+
+<p class="notes">If you would like to preview the site locally rather than having to push it
+live to the web to see your changes, you will need to install Jekyll
+on your local machine. Describing how to do that is out of the scope of this lesson. 
+Follow the <a href="https://jekyllrb.com/docs/">Jekyll installation instructions</a>.</p>
+
+<p>In Exercise 1 below, you will make a change to the homepage and push it.</p>
+
+<h3 id="creating-a-project-page-with-a-premade-template">Creating a project page with a premade template</h3>
+
+<p>In addition to your personal site at <code class="language-plaintext highlighter-rouge">username.github.io</code>, you can also make pages associated with your
+individual projects on GitHub.</p>
+
+<p>To make one of your GitHub repos into a page, go to the <strong>Settings</strong> page of one of your existing repos
+and scroll down to the <strong>GitHub Pages</strong> section as you did for your user page.</p>
+
+<p>Select a premade Jekyll theme for your page.</p>
+
+<p>This will automatically create a branch called <code class="language-plaintext highlighter-rouge">gh-pages</code> and open a code editor window for the <code class="language-plaintext highlighter-rouge">index.md</code> file. 
+You can close this window without any further action needed.</p>
+
+<p>After a few minutes, your site will be live at <code class="language-plaintext highlighter-rouge">username.github.io/reponame</code>!</p>
+
+<p class="captioned"><img src="https://cdn.jsdelivr.net/gh/SESYNC-ci/advanced-git-lesson@v0.1/docs/assets/images/gh_pages_themeset.PNG" alt="github pages editor window" width="75%" style="border: none; box-shadow: none;" /><br />
+<em>This window will pop up but no further action is needed.</em></p>
+
+<p>Instead of editing the Markdown online, it’s better to pull the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch locally, make changes, and commit and push them back up to the remote repo.</p>
+
+<p>Let’s use our newfound branching skills to do that!</p>
+
+<p>First, open the RStudio project for the repo you just added a page to. 
+Go to your terminal, create a branch called <code class="language-plaintext highlighter-rouge">gh-pages</code> and switch to it.</p>
+
+<div class="language-bash text-document highlighter-rouge" title="worksheet-9001.sh"><div class="highlight"><pre class="highlight"><code>git checkout <span class="nt">-b</span> gh-pages
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switched to a new branch <span class="s1">'gh-pages'</span>
+</code></pre></div></div>
+
+<p>Next, pull the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch from the remote origin.</p>
+
+<div class="language-bash text-document highlighter-rouge" title="worksheet-9001.sh"><div class="highlight"><pre class="highlight"><code>git pull origin gh-pages <span class="nt">--allow-unrelated-histories</span>
+</code></pre></div></div>
+
+<p class="notes">The <code class="language-plaintext highlighter-rouge">--allow-unrelated-histories</code> option allows you to pull the pages branch, which was created
+with a fresh history not including the commit history from your main branch.</p>
+
+<p>Because this is merging a branch with a different history, a Vim text editor
+window will pop up prompting you to enter a merge commit message.</p>
+
+<p>You need to confirm this message and quit Vim by typing <code class="language-plaintext highlighter-rouge">:q</code> and pressing <code class="language-plaintext highlighter-rouge">Enter</code>.</p>
+
+<p>Hopefully you don’t get stuck in Vim, which is <a href="https://stackoverflow.com/questions/11828270/how-do-i-exit-the-vim-editor">notoriously hard to exit</a>.</p>
+
+<p class="captioned"><img src="https://cdn.jsdelivr.net/gh/SESYNC-ci/advanced-git-lesson@v0.1/docs/assets/images/vimmeme.png" alt="exit vim memes" /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">*</span> branch            gh-pages   -&gt; FETCH_HEAD
+Merge made by the <span class="s1">'recursive'</span> strategy.
+ _config.yml |  1 +
+ index.md    | 37 +++++++++++++++++++++++++++++++++++++
+ 2 files changed, 38 insertions<span class="o">(</span>+<span class="o">)</span>
+ create mode 100644 _config.yml
+ create mode 100644 index.md
+</code></pre></div></div>
+
+<p>Now you can make changes locally, commit them, and push them. Every time you do, the project page will rebuild!</p>
+
+<p>In Exercise 2 below, you will collaborate with your partner and both make changes to a project page.</p>
+
+<p class="ToS"><a href="#/slides/pages">Top of Section</a></p>
+
+<hr />
+<p><a name="/slides/exercise"></a></p>
+
+<h2 id="exercises">Exercises</h2>
+
+<p>These exercises will give you a chance to practice the advanced git techniques you learned in this lesson,
+(branches, forks, and pull requests), using GitHub Pages as an example.</p>
+
+<h3 id="exercise-1">Exercise 1</h3>
+
+<ul>
+  <li>Create a local branch in your GitHub Pages repo (<code class="language-plaintext highlighter-rouge">yourname.github.io</code>).</li>
+  <li>Edit the <code class="language-plaintext highlighter-rouge">index.md</code> file to say something about yourself.</li>
+  <li>When you are satisfied, stage, commit, and push the change to the branch on the remote origin.</li>
+  <li>Merge the branch back into the main branch and push the main branch to the remote.</li>
+  <li>Take a look at your newly modified site!</li>
+  <li>If you like, delete the test branch locally and remotely.</li>
+</ul>
+
+<h3 id="exercise-2">Exercise 2</h3>
+
+<p>This exercise should be done in pairs. Take turns being the Owner and Collaborator.</p>
+
+<p><strong>Collaborator</strong>:</p>
+
+<ul>
+  <li>Fork the Owner’s repo in which he or she created the GitHub Page at the end of this lesson.</li>
+  <li>Clone the forked repo locally.</li>
+  <li>Create another branch <em>from the</em> <code class="language-plaintext highlighter-rouge">gh-pages</code> <em>branch</em>, switch to it, and set it up to track a remote branch.</li>
+  <li>Make a change to the homepage of the repo (<code class="language-plaintext highlighter-rouge">index.md</code>) in that branch.</li>
+  <li>Stage, commit, and push.</li>
+  <li>Make a pull request from the branch you just modified, comparing to the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch on the Owner’s repo.</li>
+</ul>
+
+<p><strong>Owner</strong>:</p>
+
+<ul>
+  <li>Create a new local branch and pull the Collaborator’s pull request branch into it.</li>
+  <li>Review the changes the Collaborator made, modifying if necessary by adding additional commits. 
+<em>Note: if you want to add commits to the Collaborator’s branch, the Collaborator will have to give you push access to it on GitHub.</em></li>
+  <li>Accept the pull request on GitHub.com, merging the Collaborator’s branch with your <code class="language-plaintext highlighter-rouge">gh-pages</code> branch.</li>
+  <li>Pull the newly merged <code class="language-plaintext highlighter-rouge">gh-pages</code> branch locally.</li>
+  <li>Take a look at your newly modified project page!</li>
+  <li>If you like, delete the pull request branch locally.</li>
+</ul>
+
+<h2 id="solutions">Solutions</h2>
+
+<h3 id="exercise-1-1">Exercise 1</h3>
+
+<ul>
+  <li>In the repo you created for your personal GitHub Page (<code class="language-plaintext highlighter-rouge">yourname.github.io</code>), execute <code class="language-plaintext highlighter-rouge">git checkout -b (name of new branch)</code>.</li>
+  <li>Open <code class="language-plaintext highlighter-rouge">index.md</code> and add some text.</li>
+  <li>Stage, commit, and push:</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add index.md
+git commit -m "Add content"
+git push -u origin (name of new branch)
+</code></pre></div></div>
+
+<ul>
+  <li>Merge the branch into the main branch and push to the remote.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout main
+git merge (name of new branch)
+git push -u origin main
+</code></pre></div></div>
+
+<ul>
+  <li>Delete the now-merged branch on your local machine and remotely.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch -d (name of new branch)
+git push origin --delete (name of new branch)
+</code></pre></div></div>
+
+<h3 id="exercise-2-1">Exercise 2</h3>
+
+<p><strong>Collaborator</strong>:</p>
+
+<ul>
+  <li>Navigate to <code class="language-plaintext highlighter-rouge">https://github.com/(username of owner)/(name of repo)</code> and select “Fork” in the upper right to fork the 
+repo into your own account.</li>
+  <li>Clone the repo by going to your terminal locally and executing <code class="language-plaintext highlighter-rouge">git clone https://github.com/(your username)/(name of repo).git</code>. (As always, make sure you’re cloning into the right place so you don’t get nested repos.)</li>
+  <li>Create the branch, specifying that you are creating it from <code class="language-plaintext highlighter-rouge">gh-pages</code>, and set it up to track the remote.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout -b (name of new branch) gh-pages
+git push -u origin (name of new branch)
+</code></pre></div></div>
+
+<ul>
+  <li>Edit the file <code class="language-plaintext highlighter-rouge">index.md</code>.</li>
+  <li>Stage, commit, and push:</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add index.md
+git commit -m "Edit index.md"
+git push
+</code></pre></div></div>
+
+<ul>
+  <li>Navigate to <code class="language-plaintext highlighter-rouge">https://github.com/(your username)/(name of repo)</code> and open the “Pull Requests” tab.</li>
+  <li>When prompted to select branches to compare (across forks), select your new branch and the Owner’s <code class="language-plaintext highlighter-rouge">gh-pages</code> branch.</li>
+  <li>Create the pull request. The Owner should get a notification.</li>
+</ul>
+
+<p><strong>Owner</strong>:</p>
+
+<ul>
+  <li>To create a new branch and pull the Collaborator’s pull request branch into it, run:</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout -b collab-pullrequest-branch
+git pull https://github.com/(collaborator name)/(repo name).git (name of pull request branch)
+</code></pre></div></div>
+
+<ul>
+  <li>You will need to sign off on the merge commit message and quit Vim by typing <code class="language-plaintext highlighter-rouge">:q</code> and pressing <code class="language-plaintext highlighter-rouge">Enter</code>.</li>
+  <li>Open and view <code class="language-plaintext highlighter-rouge">index.md</code>. If you want to add a commit to this, you can do so by having the Collaborator go to the
+page on github.com for their forked repo, open the “Settings” tab, click “Manage access”, and invite you with 
+the proper permissions. Then you can edit the file and stage-commit-push as usual.</li>
+  <li>Navigate to <code class="language-plaintext highlighter-rouge">https://github.com/(username of owner)/(name of repo)</code> and open the “Pull Requests” tab.</li>
+  <li>Accept the pull request through the interface on GitHub.com.</li>
+  <li>Pull the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch locally (because you merged remotely):</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout gh-pages
+git pull origin gh-pages --allow-unrelated-histories
+</code></pre></div></div>
+
+<ul>
+  <li>Again you will need to sign off on the merge commit message and quit Vim by typing <code class="language-plaintext highlighter-rouge">:q</code> and pressing <code class="language-plaintext highlighter-rouge">Enter</code>.</li>
+  <li>Delete the pull request branch locally using <code class="language-plaintext highlighter-rouge">git branch -D collab-pullrequest-branch</code>. 
+(The <code class="language-plaintext highlighter-rouge">-D</code> is needed to confirm that you are deleting an unmerged branch, because you merged it remotely not locally.)</li>
+</ul>
+
+<p class="ToS"><a href="#/slides/exercise">Top of Section</a></p>
+
+
+
+        <hr>
+
+<p>If you need to catch-up before a section of code will work, just squish it's
+🍅 to copy code above it into your clipboard. Then paste into your interpreter's
+console, run, and you'll be ready to start in on that section. Code copied by
+both 🍅 and 📋 will also appear below, where you can edit first, and then copy,
+paste, and run again.</p>
+
+<div class="output">
+  <pre id="ketchup" contenteditable="true"><code># Nothing here yet!</code></pre>
+</div>
+
+<script>
+$(document).ready(function(){
+  
+  // Add code help icons to code blocks
+  $('.input, .text-document').append('<ul class="code-help">');
+  $('.code-help')
+    .append('<li class="clipboard">📋</li>');
+  $('.text-document:not(.no-eval) .code-help')
+    .append('<li class="ketchup">🍅</li>');
+
+  // Bind copy actions to mouse clicks on icons
+  var $ketchup = $('#ketchup');
+  var rng = document.createRange();
+  var sel = window.getSelection();
+  $('.ketchup').click(function(){
+    var $prev = $(this)
+      .parents('.text-document')
+      .prevAll('.text-document:has(.ketchup)');
+    $ketchup.find('code').text($prev.find('pre').text());
+    rng.selectNodeContents($ketchup[0]);
+    sel.removeAllRanges();
+    sel.addRange(rng);
+    document.execCommand("copy");
+    sel.removeAllRanges();
+  });
+  $('.text-document .clipboard').click(function(){
+    var pre = $(this).parents('.text-document').find('pre').text();
+    $ketchup.find('code').text(pre);
+    rng.selectNodeContents($ketchup[0]);
+    sel.removeAllRanges();
+    sel.addRange(rng);
+    document.execCommand("copy");
+    sel.removeAllRanges();
+  });
+  $('.input .clipboard').click(function(){
+    var pre = $(this).parents('.input').find('pre').text();
+    pre = pre.replace(/(^|\n)[>+] /g, '$1');
+    $ketchup.find('code').text(pre);
+    rng.selectNodeContents($ketchup[0]);
+    sel.removeAllRanges();
+    sel.addRange(rng);
+    document.execCommand("copy");
+    sel.removeAllRanges();
+  });
+});
+</script>
+      </div>
+    </div>
+    <script>
+$(document).ready(function(){
+  // Add links to R and Python package repositories
+  $('a.rlib').map(function(){
+    this.href = 'https://cran.r-project.org/package=' + this.innerText;
+  });
+  $('a.pylib').map(function(){
+    this.href = 'https://pypi.python.org/pypi/' + this.innerText;
+  });
+});
+</script>
+
+  </body>
+</html>

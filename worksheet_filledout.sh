@@ -19,6 +19,8 @@ git checkout main
 
 git merge my-new-branch
 
+git push
+
 git branch -d my-new-branch
 
 git push origin --delete my-new-branch
@@ -36,7 +38,7 @@ git clone https://github.com/(owner name)/(repo name).git
 git clone https://github.com/(collaborator name)/(repo name).git
 
 git add README.md
-git commit "Edit README.md"
+git commit -m "Edit README.md"
 git push
 
 # Owner

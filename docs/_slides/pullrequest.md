@@ -70,7 +70,7 @@ Now make a change to the README.md. Stage, commit, and push.
 
 ~~~bash
 git add README.md
-git commit "Edit README.md"
+git commit -m "Edit README.md"
 git push
 ~~~
 {:.text-document title="worksheet.sh"}

@@ -19,6 +19,7 @@ git branch ...
 # Merging branch and cleanup
 git ...
 git ... my-new-branch
+git push
 
 git ... my-new-branch
 git push ... my-new-branch

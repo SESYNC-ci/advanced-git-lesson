@@ -230,6 +230,15 @@ If there were any conflicts, you'd have to resolve them first.
 
 ===
 
+Push the main branch, with its newly merged commit, to the remote.
+
+~~~bash
+git push
+~~~
+{:.text-document title="worksheet.sh"}
+
+===
+
 Now you can continue your work in the main branch. To avoid cluttering up the repo with lots of old branches, 
 it's a good idea to delete old unused branches. Use the `-d` option on `git branch`:
 

@@ -80,7 +80,11 @@ yet incorporated into the Owner's repo. Time to make a pull request.
 
 ===
 
-**Collaborator**: Go to the "Pull Requests" tab in the Owner's repository. You should see something like this.
+**Collaborator**: Go to the "Pull Requests" tab in your repo page on GitHub. 
+
+GitHub may automatically prompt you to make a pull request if you recently pushed changes.
+{:.notes}
+
 Click on "New pull request."
 
 ![pull request page]({% include asset.html path="images/pullrequest_forkedrepo.png" %})

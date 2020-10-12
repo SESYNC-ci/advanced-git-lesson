@@ -26,6 +26,16 @@ You should be able to do the basic git actions described in the
 or the [Git in the Shell lesson](https://cyberhelp.sesync.org/git-in-the-shell-lesson):
 set up a repo, stage changes, commit, push, and pull.
 
+In addition, you should have a general idea of how Unix shell commands work. 
+These commands have their own special syntax. 
+If you aren't familiar with Unix shell commands, you might want to 
+look at [this lesson from Software Carpentry](https://swcarpentry.github.io/shell-novice/).
+Or check out [explainshell.com](https://explainshell.com/), which is a
+handy tool that gives you the help text associated with specific shell
+commands, including `git` commands.
+{:.notes}
+
+
 ===
 
 ## Why do I care?

@@ -26,6 +26,8 @@ You should be able to do the basic git actions described in the
 or the [Git in the Shell lesson](https://cyberhelp.sesync.org/git-in-the-shell-lesson):
 set up a repo, stage changes, commit, push, and pull.
 
+**Please review one of the basic git lessons to make sure you are up to speed before proceeding with this lesson.**
+
 In addition, you should have a general idea of how Unix shell commands work. 
 These commands have their own special syntax. 
 If you aren't familiar with Unix shell commands, you might want to 
@@ -34,7 +36,6 @@ Or check out [explainshell.com](https://explainshell.com/), which is a
 handy tool that gives you the help text associated with specific shell
 commands, including `git` commands.
 {:.notes}
-
 
 ===
 

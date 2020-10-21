@@ -26,6 +26,8 @@ We will go through all these steps in the following part of the lesson.
 
 ===
 
+### Pull request walkthrough
+
 For this part of the lesson, there are two roles, the **Owner** and **Collaborator**. Find a partner, 
 and go through this exercise twice, each time taking a different role. 
 
@@ -93,6 +95,8 @@ yet incorporated into the Owner's repo. Time to make a pull request.
 
 ===
 
+### Opening a PR
+
 **Collaborator**: Go to the "Pull Requests" tab in your repo page on GitHub. 
 
 GitHub may automatically prompt you to make a pull request if you recently pushed changes.
@@ -121,6 +125,8 @@ You have made a request for the **Owner** of the repo to review the commits you'
 in the hope that he or she will accept the request and add your changes to the primary official version of the repo.
 
 ===
+
+### Dealing with an open PR
 
 **Owner**: As the owner, you will receive an email saying that someone has made a pull request on your repo. 
 

@@ -11,6 +11,19 @@ In contrast, if you are a collaborator on a repo who has write access, you can p
 to contribute to a project because it gives the repo owner a chance to review your changes and approve them.
 {:.notes}
 
+=== 
+
+### Basic pull request workflow
+
+1. The "pull requester" forks someone else's repository and clones it locally.
+1. S/he makes some changes, stages, commits, and pushes.
+1. On GitHub, s/he creates a pull request comparing the changes you just made with the original owner's repo.
+1. The original owner creates a new branch and pulls the PR into that branch
+1. The owner tests the code, potentially adding additional changes and committing them.
+1. If the code is good, the owner accepts the PR by merging it into his or her main branch and pushing.
+
+We will go through all these steps in the following part of the lesson.
+
 ===
 
 For this part of the lesson, there are two roles, the **Owner** and **Collaborator**. Find a partner, 

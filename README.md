@@ -17,6 +17,8 @@ Here are a few additional notes from that day that future instructors should be 
 tab within RStudio. This confused some students who were more used to just opening a terminal window
 locally, or possibly doing it within JupyterLab. So just be aware to make sure people who might not
 be using RStudio are following along.
+- On the other side of the coin, some students weren't too familiar with the RStudio GUI. Make sure
+you don't assume they all are, and accommodate those who are not.
 - When creating a new empty repo on GitHub, you need to have at least one commit before you can
 create a branch. Otherwise there is no master/main branch and thus nothing to branch a new branch from.
 Initializing the repo with a README.md will accomplish this.

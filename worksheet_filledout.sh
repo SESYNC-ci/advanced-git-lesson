@@ -1,5 +1,7 @@
 ## Branches
 
+git clone https://github.com/(your username)/(the repo name).git
+
 git branch my-new-branch
 
 git checkout my-new-branch

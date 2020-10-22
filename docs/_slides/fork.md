@@ -41,8 +41,7 @@ Go to <https://github.com/yihui/fun> and fork the repo into your account.
 A few seconds later, you will have a copy of the repo in your account.
 Go back to your terminal to clone the forked repo to the home directory on your local machine.
 
-**Important**: Make sure you `cd` to the directory where you want to clone the repo before cloning.
-You don't want to have repo folders nested inside each other!
+As before, make sure you are in your home directory before running this.
 {:.notes}
 
 ~~~bash
@@ -56,17 +55,8 @@ Cloning into 'fun'...
 
 ===
 
-In RStudio, an alternative to the command above is to
-clone the repo into a new RStudio project by going to 
-`File > New Project > Version Control` and entering the repo URL. 
-
-This will integrate version control with RStudio's project structure.
-If there are no `.Rproj` or `.gitignore` files in the repo you are cloning, this will create them.
-{:.notes}
-
-![RStudio three steps to create project]({% include asset.html path="images/threesteps_newproj.png" %})
-*These are the three steps to follow to clone the project with RStudio's dialog.*
-{:.captioned}
+As before, an alternative to running the command above is to create a new project in 
+RStudio, select "Version Control," and enter the URL of the forked repo.
 
 Now, when you commit and push changes to this repo, they will be pushed to the copy you
 own rather than the owner's original copy. You probably do *not* want this behavior

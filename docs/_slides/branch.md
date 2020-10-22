@@ -90,6 +90,51 @@ First, let's practice a basic branch workflow using the command line.
 
 ===
 
+### Create a repository
+
+If you don't have a repo to practice on, go ahead and create one.
+Your choices are to create a repo locally and then push the repo to the remote (GitHub), 
+or to create the repo remotely on GitHub and then clone it locally.
+You should know how to do either of those things from the basic git lesson, but here we
+will quickly review how to create the repo remotely and clone it locally.
+
+===
+
+To create the repo remotely, follow these steps:
+
+- Create a user account on GitHub.com if you don't already have one.
+- Create the repo by clicking on "New" on your Repositories tab on your GitHub user page.
+- Give the repo a name and **check the box to initialize the repo with a README.md file**.
+
+===
+
+Open a terminal on your local machine and clone the new repo to the home directory.
+
+**Important**: Make sure you `cd` to the directory where you want to clone the repo before cloning.
+You don't want to have repo folders nested inside each other!
+{:.notes}
+
+~~~bash
+git clone https://github.com/(your username)/(the repo name).git
+~~~
+{:.text-document title="worksheet.sh"}
+
+===
+
+In RStudio, an alternative to the command above is to
+clone the repo into a new RStudio project by going to 
+`File > New Project > Version Control` and entering the repo URL. 
+
+This will integrate version control with RStudio's project structure.
+If there are no `.Rproj` or `.gitignore` files in the repo you are cloning, this will create them.
+{:.notes}
+
+![RStudio three steps to create project]({% include asset.html path="images/threesteps_newproj.png" %})
+*These are the three steps to follow to clone the project with RStudio's dialog.*
+{:.captioned}
+
+===
+
 ### Create branch locally
 
 You can create a branch from the terminal or point-and-click-style in RStudio. We'll start by using the terminal.

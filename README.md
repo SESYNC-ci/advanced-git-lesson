@@ -1,7 +1,5 @@
 ## Advanced git Techniques
 
-**this readme is a draft --- edit later**
-
 This lesson covers advanced topics in git, using GitHub and RStudio. 
 Topics include forks, issues, pull requests, branches, and creating user and project GitHub Pages.
 
@@ -35,3 +33,5 @@ tutorials on using cyberinfrastructure in pursuit of the Center's scientific
 mission. Visit [www.sesync.org](https://www.sesync.org) to learn more about
 SESYNC and [cyberhelp.sesync.org](https://cyberhelp.sesync.org) for more
 tutorials and ideas.
+
+*this readme last modified on 22 Oct 2020*

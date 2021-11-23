@@ -1,3 +1,6 @@
+[![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://github.com/SESYNC-ci/sesync-ci.github.io/blob/master/lesson/lesson-lifecycle.md#stable)
+[![DOI](https://zenodo.org/badge/287591846.svg)](https://zenodo.org/badge/latestdoi/287591846)
+
 ## Advanced git Techniques
 
 This lesson covers advanced topics in git, using GitHub and RStudio. 

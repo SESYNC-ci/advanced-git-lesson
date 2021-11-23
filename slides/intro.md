@@ -22,8 +22,8 @@
 ## Prerequisites
 
 You should be able to do the basic git actions described in the 
-[Basic git Lesson](https://cyberhelp.sesync.org/basic-git-lesson) 
-or the [Git in the Shell lesson](https://cyberhelp.sesync.org/git-in-the-shell-lesson):
+[Basic git Lesson]({{ site.gh-pages }}/basic-git-lesson) 
+or the [Git in the Shell lesson]({{ site.gh-pages }}/git-in-the-shell-lesson):
 set up a repo, stage changes, commit, push, and pull.
 
 **Please review one of the basic git lessons to make sure you are up to speed before proceeding with this lesson.**

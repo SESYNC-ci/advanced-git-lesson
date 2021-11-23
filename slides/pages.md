@@ -22,7 +22,7 @@ Markdown or RMarkdown files to HTML, or manually.
 There are many ways to customize the layout and theme of your page. This lesson does not go into
 much detail about that. The first place to look for more information is 
 [the official GitHub Pages documentation](https://docs.github.com/en/github/working-with-github-pages). 
-We have also compiled [a list of resources, tutorials, and templates](https://cyberhelp.sesync.org/blog/github-pages-resources.html).
+We have also compiled [a list of resources, tutorials, and templates]({{ site.gh-pages }}/blog/github-pages-resources.html).
 {:.notes}
 
 The [Minimal Mistakes theme](https://github.com/mmistakes/minimal-mistakes) is one of the most widely used free templates. 
@@ -32,7 +32,7 @@ that is designed for academics.
 If you use either of these templates, consider donating to the developer on PayPal.
 {:.notes}
 
-All the [SESYNC cyberhelp lesson pages](https://cyberhelp.sesync.org/lesson/) were created with GitHub Pages, 
+All the [SESYNC cyberhelp lesson pages]({{ site.gh-pages }}/lesson/) were created with GitHub Pages, 
 including this one! 
 The [homepage of the popular R package sf](https://r-spatial.github.io/sf/) is also a GitHub Page,
 as are [this collection of R stats tutorials](https://tinystats.github.io/teacups-giraffes-and-statistics/index.html)
